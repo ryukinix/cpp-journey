@@ -1,0 +1,392 @@
+* DONE C++ prime checking
+  CLOSED: [2017-07-05 qua 15:08]
+  SCHEDULED: <2017-07-05 qua>
+  CLOCK: [2017-07-05 qua 14:29]--[2017-07-05 qua 14:30] =>  0:01
+Usei as bibliotecas:
+#+BEGIN_SRC cpp
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#+END_SRC
+Em iostream usei apenas cout. cstdlib precise para a função atoi.
+cmath para sqrt.
+A linha de comando para compilação foi:
+`g++ source.cpp -o primep -lm`
+
+O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
+* IN-PROGRESS HackerRank C++
+** DONE Strinsg
+   CLOSED: [2017-07-06 qui 06:49]
+*** DONE The Type String
+    SCHEDULED: <2017-07-05 qua>
+    CLOSED: [2017-07-05 qua 16:04]
+    CLOCK: [2017-07-05 qua 14:31]--[2017-07-05 qua 14:47] =>  0:16
+
+Diferentemente de C, C++ implementa um tipo string não somente como uma cadeia
+de caracteres, mas como um objeto. Possui métodos associados, como length.
+É bem útil.
+
+
+#+BEGIN_SRC cpp
+// inicialização de string
+string a = "abc";
+// tamanho
+a.size()
+// concatenação
+string b = "def"
+string c = a + b; // "abcdef"
+
+#+END_SRC
+
+O primeiro exercício do HackerRank:
+
+#+BEGIN_SRC cpp
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    string a,b;
+    cin >> a;
+    cin >> b;
+    cout << a.size() << " " << b.size() << endl;
+    cout << a + b << endl;
+    char temp = a[0];
+    a[0] = b[0];
+    b[0] = temp;
+    cout << a << " " << b << endl;
+
+    return 0;
+}
+
+#+END_SRC
+
+
+Lidando com tamanho, concatenação e substituição de characteres
+em strings.
+
+*** DONE Streams
+    CLOSED: [2017-07-05 qua 16:20]
+    SCHEDULED: <2017-07-05 qua>
+    CLOCK: [2017-07-05 qua 15:01]--[2017-07-05 qua 16:09] =>  1:08
+Esse tópico refere-se ao gerenciamento de stream usando strings
+para C++. Muito interessante. O operador << insere informação,
+por outro lado, o operador >> extrai informação.
+
+
+O método ss cria stringstream cria uma stream. O cabeçalho é sstream.
+[[file+emacs:Strings/strings-2.cpp][File: HackerRank-Problem-String]]
+O método sstream::eof verifica se a stream está no fim. EOF = End Of File.
+
+*** DONE Attribute Parser
+    CLOSED: [2017-07-06 qui 06:49]
+    SCHEDULED: <2017-07-05 qua>
+    CLOCK: [2017-07-05 qua 16:09]--[2017-07-06 qui 06:32] => 14:23 (horas!)
+
+Nessa atividade, a última de strings, vou precisar fazer um parser de atributos
+em Cancer++. Um pouco da descrição do site é dada no block de código abaixo.
+
+#+BEGIN_SRC xml
+We have defined our own markup language HRML. In HRML, each element consists of
+a starting and ending tag, and there are attributes associated with each tag.
+Only starting tags can have attributes. We can call an attribute by referencing
+the tag, followed by a tilde, '~' and the name of the attribute.
+The tags may also be nested.
+
+Sample Input
+
+4 3
+<tag1 value = "HelloWorld">
+<tag2 name = "Name1">
+</tag2>
+</tag1>
+tag1.tag2~name
+tag1~name
+tag1~value
+
+Sample Output
+
+Name1
+Not Found!
+HelloWorld
+#+END_SRC
+
+A atividade está sendo desenvolvida no arquivo:
+[[file+emacs:Strings/strings-3-attribute-parser.cpp][File: Attribute Parser]]
+
+Já estou há várias horas resolvendo esse problema. Sinceramente é um pouco
+trabalhoso. Agora é <2017-07-06 qui 01:50>. Já se passou mais de 8 horas...
+que inferno! Mas eu dormi um pouco antes também. Cassete! terminei agora depois
+de 14 horas! Uma completa desgraça! KKK
+
+QUE INFERNO!!!!!! TERMINEI!!!!
+
+Primeiramente interpretei o problema um tanto errado, pensando que a primeira
+tag seria a raíz da árvore. O que deu bastante problema para contornar.
+Após isso havia vários erros, como o não tratamento de espaços antes das chaves,
+como indentação. Isso não parece ter nenhum efeito durante a correção. Mas
+só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
+repositório do github. O problema central, depois de corrigir a modelagem errada,
+era em relação ao método de pesquisa.
+**
+** IN-PROGRESS C++ & OO
+*** DONE Introdução de C++ com Orientação a Objetos
+   CLOSED: [2017-07-06 qui 20:57]
+   SCHEDULED: <2017-07-05 qua>
+   CLOCK: [2017-07-05 qua 14:00]--[2017-07-05 qua 14:29] =>  0:29
+Estou fazendo alguns exercícios de C++ no HackerRank. Até agora não estou
+com muitos problemas. Na verdade C++ não é tão difícil quanto eu pensei.
+De fato, na verdade, eu nunca tinha parado pra olhar direito como era a
+linguagem e só ficava de tretinha básica.
+
+OO em C++ parece ser divertido, apesar de ainda ter uma impressão cancerígina.
+Não é pra menos... keywords, friend, public, private e protected?
+Mas, enfim, acho que vou conseguir me acostumar. Quero terminar hoje ainda a
+introdução, estou na última parte envolvendo OO, herança e variáveis estáticas.
+
+Método virtuais em C++ são usados para fazer polimorfismo dinâmicos em heranças.
+Protected são membros acessíveis apenas pelas subclasses. Private são
+acessíveis apenas pelos métodos da classe. Public são publicos para todos.
+
+Por padrão, membros são privados em classes. É possível usar a keyword friend
+para acessar atributos privados de outra classe. Provavelmente eu não deveria
+estar falando desses tópicos avançados de OO na introdução (HAHAH!). Mas
+é bom que dá o gostinho de desgraça que C++ tem tanto de especial.
+#+BEGIN_SRC cpp
+const int NUMBER_OF_MARKS = 6;
+
+class Person {
+protected:
+    string name;
+    int age;
+public:
+    virtual void putdata(void){};
+    virtual void getdata(void){};
+};
+
+class Professor: public Person {
+private:
+    int publications;
+    int cur_id;
+public:
+    static int count;
+    Professor(void){
+        cur_id = count + 1;
+        count += 1;
+    }
+    virtual void putdata(void) {
+        // The function putdata should print the name, age, publications and the cur_id of the professor.
+        cout << name << " ";
+        cout << age << " ";
+        cout << publications << " ";
+        cout << cur_id << endl;
+    }
+
+    virtual void getdata(void) {
+        cin >> name;
+        cin >> age;
+        cin >> publications;
+    }
+};
+
+class Student: public Person {
+private:
+    int marks[NUMBER_OF_MARKS];
+    int _sum_marks() {
+        int total = 0;
+        for (int i = 0; i < NUMBER_OF_MARKS; i++) {
+            total += marks[i];
+        }
+        return total;
+    }
+    int cur_id;
+public:
+    static int count;
+    Student(void) {
+        cur_id = count + 1;
+        count += 1;
+    }
+    virtual void putdata(void) {
+        // The function putdata should print the name, age, sum of the marks and the cur_id of the student.
+        cout << name << " ";
+        cout << age << " ";
+        cout << _sum_marks() << " ";
+        cout << cur_id << endl;
+
+    }
+
+    virtual void getdata(void) {
+        cin >> name;
+        cin >> age;
+        for (int i = 0; i < NUMBER_OF_MARKS; i++){
+            cin >> marks[i];
+        }
+
+    }
+
+};
+
+int Professor::count = 0;
+int Student::count = 0;
+
+#+END_SRC
+
+Construtores podem ser definidos uma ou várias vezes.
+No entanto, destrutores só podem ser definidos uma vez.
+
+*** DONE Structs
+   CLOSED: [2017-07-06 qui 06:58]
+   SCHEDULED: <2017-07-06 qui>
+   CLOCK: [2017-07-06 qui 06:51]--[2017-07-06 qui 06:57] =>  0:06
+
+Os structs em C++ são semelhantes de C, no entanto eles são como classes
+com membros e métodos públicos por padrão. Usualmente structs são usados apenas
+para agrupar membros de variáveis numa estrutura compartilhada, podendo assim,
+criar estrutura de dados mais complexas.
+
+*** DONE Básico de Classes
+   CLOSED: [2017-07-06 qui 08:00]
+   SCHEDULED: <2017-07-05 qua>
+   CLOCK: [2017-07-06 qui 06:58]--[2017-07-06 qui 08:00] =>  1:02
+
+Por padrão classes tem seus métodos e atributos privados, sendo reservado as
+keywords para controle de acesso: protected, private e public.
+Uma prática comum em C++ é deixar todos os atributos privados ou protecteds
+(case for uma classe base de herança), então criar getters e setters públicos.
+
+Um exemplo de código abaixo é dado:
+
+#+BEGIN_SRC cpp
+class Student {
+private:
+    string name;
+    int age;
+public:
+    string get_mame() {
+        return name;
+    }
+
+    string get_age() {
+        return age;
+    }
+
+    void set_name(string new_name) {
+        name = new_name;
+    }
+
+    void set_age(int new_age) {
+        age = new_age;
+    }
+}
+
+#+END_SRC
+
+*** DONE Class constructors
+    CLOSED: [2017-07-06 qui 08:50]
+    SCHEDULED: <2017-07-06 qui>
+Construtores são chamados na inicialização de uma classe. Podem ter um ou mais,
+com diferentes assinaturas.
+Os tipos de construtores são três:
+        1. Construtor padrão
+        2. Construtor parametrizado
+        3. Construtor de Cópia
+[[file+emacs:Classes/constructor.cpp][File: ConstructorsExample]]
+
+*** DONE Exceptions
+   CLOSED: [2017-07-06 qui 20:42]
+   SCHEDULED: <2017-07-06 qui>
+
+C++ permite criar exceções personalizadas ao criar uma herança da classe
+`exception`. O método descritivo da exceção é `const char* what(){}`.
+Uma atividade simples foi feita em: [[file+emacs:Classes/exception.cpp][Exceptions.cpp]]
+Blocos try/catch são usados pra lidar com exceções que ocorreram.
+throw Exception(); é usado para sinalizar uma exceção.
+
+Minha proxima atividade no HackerRank é a respeito de um servidor para
+capturar exceções customizadas.
+[[file+emacs:Classes/CustomExceptions.cpp][CustomExceptions.cpp]]
+
+Todas as exceções padrões tem como base classe *std::exception*.
+Uma maneira simples de capturar uma exceção e imprimi-la, é desta maneira:
+
+#+NAME Exemplo de captura de exceção
+#+BEGIN_SRC cpp
+#include <exception> // definição da classe base std::exception
+#include <stdexcept> // várias exceções padrões para ser usadas
+try {
+    std::cout << 1/0;
+} catch(std::exception const& e) {
+    std::cout << "Erro do capeta: " << e.what();
+} catch(...) {
+    // essa sessão captura qualquer exceção não esperada
+}
+#+END_SRC
+
+Exceções definidas no cabeçalho <stdexcept>
+- bad_alloc
+- bad_cast
+- bad_exception
+- bad_typeid
+- logic_error
+  - domain_error
+  - invalid_argument
+  - length_error
+  - out_of_range
+- runtime_error
+  - range_error
+  - overflow_error
+  - underflow_error
+
+*** IN-PROGRESS Polymorphism and Abstract Base Classes
+    CLOCK: [2017-07-06 qui 20:49]
+    Comecei a fazer essa atividade agora às <2017-07-06 qui 20:51>.
+Polimorfismo é quando um método na herança é modificado. Em C++
+existem as chamadas Classes Abstratas de Base, onde é permitido que elas
+possuam apenas métodos virtuais para futuramente, numa herança, realizar
+polimorfismo.
+
+Essa última atividade é bem cabulosa. Para implementar um sistema de cache
+usando listas duplamente encadeadas e, além disso, fazer de tal maneira que
+use os conceitos referentes a polimorfismo numa classe chamada Cache.
+
+As atividades a serem desenvolvidas aqui podem ser encontradas em:
+[[file+emacs:Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]]
+
+*** TODO Listas de inicialização para construtores
+    SCHEDULED: <2017-07-07 sex>
+*** TODO Testar separadores de escopo `::` e `.`
+    SCHEDULED: <2017-07-07 sex>
+
+** STL :: C++ Standard Library
+*** DONE STL - Vector Sort
+   CLOSED: [2017-07-06 qui 20:44]
+   CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
+A Standard Library de C++ vem com muitos bultins. Um dos métodos
+da biblioteca  é std::sort(vector::begin, vector::end).
+
+#+NAME Ordenar n números
+#+BEGIN_SRC cpp
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    int n, x;
+    cin >> n;
+    vector<int> v;
+    for(int i = 0; i < n; i++) {
+        cin >> x;
+        v.push_back(x);
+    }
+    sort(v.begin(), v.end());
+    for(int x :v) {
+        cout << x << " ";
+    }
+    return 0;
+}
+#+END_SRC
