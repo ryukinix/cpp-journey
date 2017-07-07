@@ -15,7 +15,7 @@ A linha de comando para compilação foi:
 
 O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
 * IN-PROGRESS HackerRank C++
-** DONE Strinsg
+** DONE Strings
    CLOSED: [2017-07-06 qui 06:49]
 *** DONE The Type String
     SCHEDULED: <2017-07-05 qua>
