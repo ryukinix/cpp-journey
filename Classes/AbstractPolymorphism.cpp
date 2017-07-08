@@ -17,19 +17,19 @@ struct Node{
     int value;
     Node(Node* p, Node* n, int k, int val):prev(p),next(n),key(k),value(val){};
     Node(int k, int val):prev(NULL),next(NULL),key(k),value(val){};
-    ~Node(void);
+    // ~Node(void);
 };
 
-Node::~Node(void) {
-    delete &this->key;
-    delete &this->value;
-    delete this;
-}
+// Node::~Node(void) {
+//     delete &this->key;
+//     delete &this->value;
+//     delete this;
+// }
 
 class Cache{
 
 protected:
-    map<int,Node*> mp; //map the key to the node in the linked list
+    map<int, Node*> mp; //map the key to the node in the linked list
     int cp;  //capacity
     Node* tail; // double linked list tail pointer
     Node* head; // double linked list head pointer
@@ -43,11 +43,15 @@ private:
 
     // método correto
     // E a desalocação? Acho que vai dar segfault
+    // FIXME: BAD ALLOCATION :: LOST REFERENCE
     void pop_node() {
         // cout << "POP TAIL" << endl;
+        Node *old_tail = this->tail;
         this->tail = this->tail->prev;
         this->tail->next = NULL;
         this->size -= 1;
+        this->mp.erase(old_tail->key);
+        delete old_tail;
     }
 
     // Essa definição é usada apenas
@@ -101,17 +105,21 @@ public:
     LRUCache(int c) {
         this->cp = c;
         this->size = 0;
+        this->head = NULL;
+        this->tail = NULL;
     }
     virtual void set(int key, int value) {
         // set já tiver a key, atualizar o valor do nó
         // e chamar hit_cache pra atualizar a posição
         if (this->mp.count(key) > 0) {
-            this->mp[key]->value = value;
-            this->hit_cache(this->mp[key]);
+            Node *n = mp[key];
+            n->value = value;
+            this->hit_cache(n);
         } else {
             // do contrário criar um novo nó e fazer push na lista
-            this->mp[key] = new Node(key, value);
-            this->push_node(mp[key]);
+            Node *n = new Node(key, value);
+            this->mp[key] = n;
+            this->push_node(n);
         }
     }
     virtual int get(int key) {
@@ -131,11 +139,14 @@ public:
 
     // função usada apenas para debug
     void print_cache() {
-        cout << "CACHE: ";
+        cout << "[";
         for (Node *n = this->head; n != NULL; n = n->next) {
-            cout << n->key << " ";
+            cout << "<" << n->key << "," << n->value << ">";
+             if (n->next != NULL) {
+                 cout << ", ";
+             }
         }
-        cout << endl;
+        cout << "]" << endl;
     }
 };
 
@@ -155,8 +166,9 @@ int main() {
             int key, value;
             cin >> key >> value;
             l.set(key,value);
+        } else if(command == "print") {
+            l.print_cache();
         }
-        l.print_cache();
     }
     return 0;
 }

@@ -8,7 +8,7 @@ Usei as bibliotecas:
 #include <cstdlib>
 #include <cmath>
 #+END_SRC
-Em iostream usei apenas cout. cstdlib precise para a função atoi.
+Em iostream usei apenas cout. cstdlib precisei para a função atoi.
 cmath para sqrt.
 A linha de comando para compilação foi:
 `g++ source.cpp -o primep -lm`
@@ -338,7 +338,9 @@ Exceções definidas no cabeçalho <stdexcept>
   - overflow_error
   - underflow_error
 
-*** IN-PROGRESS Polymorphism and Abstract Base Classes
+*** DONE Polymorphism and Abstract Base Classes
+    CLOSED: [2017-07-08 sáb 05:23]
+    CLOCK: [2017-07-08 sáb 02:20]--[2017-07-08 sáb 05:21] =>  3:01
     CLOCK: [2017-07-06 qui 20:49]--[2017-07-07 sex 22:43] => 25:54
     Comecei a fazer essa atividade agora às <2017-07-06 qui 20:51>.
 Polimorfismo é quando um método na herança é modificado. Em C++
@@ -346,9 +348,9 @@ existem as chamadas Classes Abstratas de Base, onde é permitido que elas
 possuam apenas métodos virtuais para futuramente, numa herança, realizar
 polimorfismo.
 
-Essa última atividade é bem cabulosa. Para implementar um sistema de cache
-usando listas duplamente encadeadas e, além disso, fazer de tal maneira que
-use os conceitos referentes a polimorfismo numa classe chamada Cache.
+Essa última atividade é bem cabulosa. O objetivo é implementar um sistema
+de cache usando listas duplamente encadeadas e, além disso, fazer de tal maneira
+que use os conceitos referentes a polimorfismo numa classe chamada Cache.
 
 As atividades a serem desenvolvidas aqui podem ser encontradas em:
 [[file+emacs:Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]].
@@ -357,8 +359,20 @@ Depois de um dia tentando ter um progresso com essa atividade, já consegui
 implementar a funcionalidade básica do Cache. No entanto, os tests com maiores
 entradas estão com problemas. De acordo com a execução do HackerRank, está
 ocorrendo segfault. Acredito que possa ser devido o não tratamento direto
-da desolocação dos objetos Nó durante a chamada de void pop_node(); que
+da desalocação dos objetos Nó durante a chamada de void pop_node(); que
 desaloca a cauda da lista. Contínuo essa atividade mais tarde.
+
+De fato durante o pop_node(); há um vazamento de memória. A referência do objeto
+é perdida, mas no entanto o objeto em si não é removido. Foi realizado uma
+verificação manual na versão deste [commit](bb6741d41c74cca1974bb41f3cd0f865a0d7be2c).
+A estratégia assumida é para gerenciar corretamente a memória durante as novas
+alocações.
+
+Como eu suspeitava, a função LRUCache::pop_node() que estava vazando memória.
+Após a adição das instruções pra desalocar tanto a cauda como também a entrada
+desse nó no HashMap mp, os testes do HackerRank passaram. Mas demorei demais pra
+fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
+difícil.
 *** TODO Listas de inicialização para construtores
     SCHEDULED: <2017-07-07 sex>
 *** TODO Testar separadores de escopo `::` e `.`
@@ -397,3 +411,10 @@ int main() {
     return 0;
 }
 #+END_SRC
+
+#  LocalWords:  iostream cstdlib cout cmath sqrt cpp primep lm public
+#  LocalWords:  Structs keywords protected private protecteds getters
+#  LocalWords:  setters structs class string return get void set int
+#  LocalWords:  Standard Library IN-PROGRESS Polymorphism Abstract
+#  LocalWords:  and Exceptions constructors new Student Type The
+#  LocalWords:  namespace
