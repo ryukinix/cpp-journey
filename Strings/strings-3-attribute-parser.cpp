@@ -14,9 +14,9 @@
 using namespace std;
 
 /*
- * Essa estrutura È usada para lidar com cada tag e suas filhas da puta
- * close_line È uma gambiarra pra saber em que linha o tag fecha
- * Isso È usado para poder fazer a leitura recursiva de modo obscuro
+ * Essa estrutura √© usada para lidar com cada tag e suas filhas da puta
+ * close_line √© uma gambiarra pra saber em que linha o tag fecha
+ * Isso √© usado para poder fazer a leitura recursiva de modo obscuro
  */
 typedef struct _Node {
     string name;
@@ -26,9 +26,9 @@ typedef struct _Node {
 } Node;
 
 /*
- * Query È a estrutura b·sica para armazenar o caminho
+ * Query √© a estrutura b√°sica para armazenar o caminho
  * e atributo de uma query.
- * path salva ordenamente a hierarquia da propriedade em relaÁ„o
+ * path salva ordenamente a hierarquia da propriedade em rela√ß√£o
  * aos nomes de cada tag (Node.name)
  */
 typedef struct _Query {
@@ -39,8 +39,8 @@ typedef struct _Query {
 typedef vector<Node> AST;
 
 /*
- * Essa funÁ„o marota aqui È usada pra remover os primeiros espaÁos
- * que PODEM vir numa determinada linha (e.g.: indentaÁ„o)
+ * Essa fun√ß√£o marota aqui √© usada pra remover os primeiros espa√ßos
+ * que PODEM vir numa determinada linha (e.g.: indenta√ß√£o)
  */
 string clean_initial_space(string str) {
     char c;
@@ -54,7 +54,7 @@ string clean_initial_space(string str) {
 }
 
 /*
- * Tokenize È uma funÁ„o maluca pra devolver uma lista de tokens
+ * Tokenize √© uma fun√ß√£o maluca pra devolver uma lista de tokens
  * Geralmente, primeiramente a tag e em seguida pares de key:value
  */
 vector<string> tokenize(string str) {
@@ -97,8 +97,8 @@ vector<string> tokenize(string str) {
 
 /*
  * @create_node baseado numa linha tokenizada
- * cria um novo nÛ e armazena as informaÁıes nele.
- * No fim retorna esse nÛ.
+ * cria um novo n√≥ e armazena as informa√ß√µes nele.
+ * No fim retorna esse n√≥.
  */
 Node create_node(vector<string> parsed) {
     Node node = Node();
@@ -112,11 +112,11 @@ Node create_node(vector<string> parsed) {
 }
 
 /*
- * @parse_ast È onde acontece toda a desgraÁa desse cÛdigo. Sinceramente
- * nem eu entendo direito como isso funciona. AlÈm de estar horrÌvel,
- * … uma funÁ„o recursiva em m˙ltiplas partes. 100% condenada.
- * Inicialmente AST era apenas um nÛ, mas depois que descobri que
- * nem sempre a entrada ter· apenas uma tag de profundidade=0, ent„o
+ * @parse_ast √© onde acontece toda a desgra√ßa desse c√≥digo. Sinceramente
+ * nem eu entendo direito como isso funciona. Al√©m de estar horr√≠vel,
+ * √â uma fun√ß√£o recursiva em m√∫ltiplas partes. 100% condenada.
+ * Inicialmente AST era apenas um n√≥, mas depois que descobri que
+ * nem sempre a entrada ter√° apenas uma tag de profundidade=0, ent√£o
  * Fiz a cagada de criar o tipo AST como vector<Node> e mudar tudo.
  */
 AST parse_ast(vector<string> lines, int start = 0, bool root = true) {
@@ -137,7 +137,7 @@ AST parse_ast(vector<string> lines, int start = 0, bool root = true) {
         }
     }
 
-    if (root && i + 1 < (int) lines.size()) { //isso aqui È uma desgraÁa
+    if (root && i + 1 < (int) lines.size()) { //isso aqui √© uma desgra√ßa
         for(Node node : parse_ast(lines, i + 1, root)) {
             ast.push_back(node);
         }
@@ -150,9 +150,9 @@ AST parse_ast(vector<string> lines, int start = 0, bool root = true) {
 }
 
 /*
- * Essa funÁ„o È usada para imprimir todas as propriedades
- * em com uma sintaxe de pontos por atributo. AtÈ onde chequei
- * È a parte mais correta desse cÛdigo cagado.
+ * Essa fun√ß√£o √© usada para imprimir todas as propriedades
+ * em com uma sintaxe de pontos por atributo. At√© onde chequei
+ * √© a parte mais correta desse c√≥digo cagado.
  */
 void print_ast(AST ast, string parent = "", int level = 0) {
     for (auto const &node: ast) {
@@ -165,8 +165,8 @@ void print_ast(AST ast, string parent = "", int level = 0) {
 }
 
 /*
- * @parse_query recebe uma string com especificaÁ„o de uma query
- * na forma <tag>.<tag>~<property> ent„o retorna um struct Query
+ * @parse_query recebe uma string com especifica√ß√£o de uma query
+ * na forma <tag>.<tag>~<property> ent√£o retorna um struct Query
  * parseado e bonitinho
  */
 Query parse_query(string str) {
@@ -196,15 +196,15 @@ Query parse_query(string str) {
 }
 
 /*
- * @search_ast baseado numa ast j· parseada e a query tbm
- * Realiza uma busca em profunidade recursiva na ·rvore
- * Em procura da chave. AtÈ onde vi o cÛdigo È O(2^n): uma delÌcia.
+ * @search_ast baseado numa ast j√° parseada e a query tbm
+ * Realiza uma busca em profunidade recursiva na √°rvore
+ * Em procura da chave. At√© onde vi o c√≥digo √© O(2^n): uma del√≠cia.
  */
 string search_ast(AST ast, Query q, int level = 0) {
     for (Node node : ast) {
         if (level < (int) q.path.size() - 1 && node.name.compare(q.path[level]) == 0) {
             string result = search_ast(node.inner, q, level + 1);
-            // se a chave for "Not found!" eu tÙ È fudido
+            // se a chave for "Not found!" eu t√¥ √© fudido
             if (result.compare("Not Found!") != 0) { // eita que a gamb rola mt
                 return result;
             }
@@ -219,7 +219,7 @@ string search_ast(AST ast, Query q, int level = 0) {
 }
 
 
-// apenas uma funÁ„o auxiliar de teste
+// apenas uma fun√ß√£o auxiliar de teste
 void test_query(AST ast, string raw_query) {
     Query query = parse_query(raw_query);
     cout << "== QUERY ==" << endl;
@@ -231,7 +231,7 @@ void test_query(AST ast, string raw_query) {
 }
 
 
-// debug È apenas usada afim de... debugar.
+// debug √© apenas usada afim de... debugar.
 void debug(){
     string test = "</tag1>";
     vector<string> test_lines = {
@@ -282,7 +282,7 @@ void debug(){
 }
 
 
-// e ent„o a funÁ„o desgraÁa
+// e ent√£o a fun√ß√£o desgra√ßa
 int main() {
     //debug();
     int n, q;
@@ -309,7 +309,7 @@ int main() {
     AST ast = parse_ast(lines);
     for(string raw_query: queries) { // iterar queries
         Query q = parse_query(raw_query);
-        // se n„o tiver atributo nada È encontrado
+        // se n√£o tiver atributo nada √© encontrado
         if (q.attr.empty()) {
             cout << "Not Found!" << endl;
         } else {
