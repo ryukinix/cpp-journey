@@ -1,19 +1,3 @@
-* DONE C++ prime checking
-  CLOSED: [2017-07-05 qua 15:08]
-  SCHEDULED: <2017-07-05 qua>
-  CLOCK: [2017-07-05 qua 14:29]--[2017-07-05 qua 14:30] =>  0:01
-Usei as bibliotecas:
-#+BEGIN_SRC cpp
-#include <iostream>
-#include <cstdlib>
-#include <cmath>
-#+END_SRC
-Em iostream usei apenas cout. cstdlib precisei para a função atoi.
-cmath para sqrt.
-A linha de comando para compilação foi:
-`g++ source.cpp -o primep -lm`
-
-O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
 * IN-PROGRESS HackerRank C++
 ** DONE Strings
    CLOSED: [2017-07-06 qui 06:49]
@@ -130,7 +114,7 @@ só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
 repositório do github. O problema central, depois de corrigir a modelagem errada,
 era em relação ao método de pesquisa.
 **
-** IN-PROGRESS C++ & OO
+** IN-PROGRESS OO
 *** DONE Introdução de C++ com Orientação a Objetos
    CLOSED: [2017-07-06 qui 20:57]
    SCHEDULED: <2017-07-05 qua>
@@ -337,7 +321,6 @@ Exceções definidas no cabeçalho <stdexcept>
   - range_error
   - overflow_error
   - underflow_error
-
 *** DONE Polymorphism and Abstract Base Classes
     CLOSED: [2017-07-08 sáb 05:23]
     CLOCK: [2017-07-08 sáb 02:20]--[2017-07-08 sáb 05:21] =>  3:01
@@ -373,18 +356,102 @@ Após a adição das instruções pra desalocar tanto a cauda como também a ent
 desse nó no HashMap mp, os testes do HackerRank passaram. Mas demorei demais pra
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
 difícil.
-*** TODO Listas de inicialização para construtores
-    SCHEDULED: <2017-07-07 sex>
-*** TODO Testar separadores de escopo `::` e `.`
-    SCHEDULED: <2017-07-07 sex>
-    Determinar em que casos é possível usar.
 
-** STL :: C++ Standard Library
+*** IN-PROGRESS Inheritance
+    SCHEDULED: <2017-07-08 sáb>
+Este é um tópico especial envolvendo como funciona o conceito de herança
+em C++, todo mal da orientação objetos, como também é uma prática comum
+em muitos projetos que usam linguagens como C++.
+
+Estarei linkando nos próximos títulos os códigos-fontes de cada
+solução das questões.
+**** DONE Inheritance Introduction
+     CLOSED: [2017-07-08 sáb 05:50] SCHEDULED: <2017-07-08 sáb>
+Nessa atividade é pedido pra construir um método de descrição de uma subclasse
+de Triangle chamada Isosceles. A construção é bem direta e não é necessário
+muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
+Mas vamos lá... [[file+emacs:Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
+**** DONE Rectangle Area
+     CLOSED: [2017-07-08 sáb 06:22] SCHEDULED: <2017-07-08 sáb>
+     CLOCK: [2017-07-08 sáb 06:12]--[2017-07-08 sáb 06:22] =>  0:10
+     Nesta atividade será feito um exercício para cálculo
+da área de um retângulo usando os conceitos de herança. Durante
+a construção da solução foi possível perceber que era possível
+chamar métodos da classe base com mesmo nome, no caso ambos possuiam
+o método void display, mas a instância do objeto era RectangleArea.
+Para acessar então, display de Rectangle, foi necessário a seguinte
+sintaxe:
+
+#+BEGIN_SRC cpp
+RectangleArea r_area;
+r_area.Rectangle::display();
+#+END_SRC
+
+A solução completa pode ser encontrada aqui:
+[[file+emacs:Inheritance/RectangleArea.cpp][RectangleArea.cpp]]
+
+**** DONE Multi Level Inheritance
+     CLOSED: [2017-07-08 sáb 06:43] SCHEDULED: <2017-07-08 sáb>
+     CLOCK: [2017-07-08 sáb 06:35]--[2017-07-08 sáb 06:43] =>  0:08
+     É possível fazer herança em mais de um nível. Um exemplo é dado
+no exercício para a construção de uma classe Equilateral, que deriva
+de Isosceles, que é derivado de Triangle. Isso demonstra a interdependência
+das propriedades que uma instância de Equilateral tem entre Isosceles
+e Triangle. O que é realmente verdade, já que um triângulo Equilátero
+é obviamente também um Triângulo e é Isósceles.
+
+A atividade foi direta de ser completa e está descrita a seguir:
+[[file+emacs:Inheritance/IsoscelesEquilateral.cpp][IsoscelesEquilateral.cpp]]
+
+**** DONE Accessing Inherited Functions
+     CLOSED: [2017-07-08 sáb 07:21] SCHEDULED: <2017-07-08 sáb>
+     CLOCK: [2017-07-08 sáb 06:48]--[2017-07-08 sáb 07:21] =>  0:33
+     Como comentada na questão Rectangle Area, é possível acessar
+funções/métodos da classe base que foi herdada. Nessa atividade
+irei descrever brevemente a implementação do exercício proposto no
+HackerRank.
+
+A atividade é descrita em: [[file+emacs:Inheritance/AcessingInheritedFunctions.cpp][AcessingInheritedFunctions.cpp]]
+
+A questão pede para se chegar a um número de entrada usando apenas as classes
+de base A, B e C.
+**** IN-PROGRESS Magic Spells
+     SCHEDULED: <2017-07-08 sáb>
+     CLOCK: [2017-07-08 sáb 07:31]--[2017-07-08 sáb 13:46] =>  6:15
+     Lá vem questão HARD de novo do inferno do HackerRank. Essa questão
+envolve o uso de herança e dynamic_cast, que é basicamente o que tentei fazer
+uma vez em C e só me fudi (uma variável de tipo dinâmico). Parece que C++
+implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
+
+dynamic_cast é usado para modelar uma instância compatível com outro tipo
+ou classe. Se um ponteiro é retornado, significa que os tipos não são compatíveis.
+Nessa questão isso é usado para saber que tipo de que classe derivada de Spell
+foi instanciada. A sintaxe é dada por dynamic_cast<Type*>(instance*). Muito
+semelhante ao cast estático de C.
+
+Estou tendo alguns problemas para construir um algoritmo do tipo LCS.
+Isto é: Longest Common Substring. Quando o spell é da classe Base, out seja,
+um tipo de magia desconhecida, é necessário que o mago olhe no catálogo de magias
+e compare o nome da magia com o que foi recebido. Dada as duas strings, a recebida
+e a do catálogo, devo retornar o tamanho da substring maior.
+
+Ou seja, é dado o exemplo que para AquaVitae e AruTaVae a maior substring é
+AuaVae. Não tenho tanta certeza se isso está correto, mas achei um código exemplo
+em C++ pra testar. Está linkado em [[file+emacs:Inheritance/LongestCommonSubstring.cpp][LongestCommonSubstring.cpp]]
+
+Minha desconfiança sobre isso é da natureza que esse exemplo não retorna
+exatamente a maior substring e sim a maior cadeia possível em sequência, se
+necessário, removendo o que tiver no meio entre elas.
+
+Vou dar uma pausa aqui nessa atividade agora às <2017-07-08 sáb 13:48>.
+Depois vou tentar voltar mais tarde. A parte inicial da atividade está feita
+em: [[file+emacs:Inheritance/MagicSpells.cpp][MagicSpells.cpp]]
+** TODO STL :: C++ Standard Library
 *** DONE STL - Vector Sort
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
 A Standard Library de C++ vem com muitos bultins. Um dos métodos
-da biblioteca  é std::sort(vector::begin, vector::end).
+da biblioteca é std::sort(vector::begin, vector::end).
 
 #+NAME Ordenar n números
 #+BEGIN_SRC cpp
@@ -410,7 +477,70 @@ int main() {
     }
     return 0;
 }
+
 #+END_SRC
+* DONE C++ prime checking
+  CLOSED: [2017-07-05 qua 15:08]
+  SCHEDULED: <2017-07-05 qua>
+  CLOCK: [2017-07-05 qua 14:29]--[2017-07-05 qua 14:30] =>  0:01
+Usei as bibliotecas:
+#+BEGIN_SRC cpp
+#include <iostream>
+#include <cstdlib>
+#include <cmath>
+#+END_SRC
+Em iostream usei apenas cout. cstdlib precisei para a função atoi.
+cmath para sqrt.
+A linha de comando para compilação foi:
+`g++ source.cpp -o primep -lm`
+
+O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
+* TODO Estudos de caso
+** DONE Listas de inicialização para construtores
+   CLOSED: [2017-07-08 sáb 06:03] SCHEDULED: <2017-07-07 sex>
+   CLOCK: [2017-07-08 sáb 05:52]--[2017-07-08 sáb 06:03] =>  0:11
+Listas de inicialização é um tipo de sintaxe para escrever
+brevemente construtores de classes, geralmente para inicializar valores.
+A sintaxe é usada como a seguir:
+
+#+BEGIN_SRC cpp
+struct Node {
+   int value;
+   Node* next;
+   Node(int v = 0, Node* ptr): value(v), next(ptr){};
+}
+#+END_SRC
+
+Dessa maneira, é possível construir de maneiras muito simplórias construtores
+que apenas relacionam entradas de função para atributos de um objeto.
+
+Vale lembrar que a ordem de inicialização deve estar de acordo com a declaração
+dos membros. De acordo com um membro do StackOverflow, em [[https://stackoverflow.com/questions/1242830/constructor-initialization-list-evaluation-order][Constructor initialization-list evaluation order]],
+foi dito que:
+
+"The reason for which they are constructed in the member declaration order
+and not in the order in the constructor is that one may have several
+constructors, but there is only one destructor.
+And the destructor destroy the members in the reserse order of construction.
+– AProgrammer"
+
+Ou seja, por conta de dependência entre os possíveis valores, a dependência
+é que o destruidor destrói os membros de um objeto na ordem inversa de
+construção, logo, a ordem importa e deve ser mantida.
+
+** DONE Testar separadores de escopo `::` e `.`
+   CLOSED: [2017-07-08 sáb 06:06] SCHEDULED: <2017-07-07 sex>
+   CLOCK: [2017-07-08 sáb 06:00]--[2017-07-08 sáb 06:06] =>  0:06
+   O operador `::` é usado como separador de escopo e acessar
+métodos/atributos estáticos. Por outro lado, `.` é usado apenas para
+acessar métodos/atributos de uma classe/struct que tenha instância. Além disso,
+o operador `->` é usado no lugar de `.` quando o objeto é um ponteiro.
+Ou seja, na verdade, (*a).b <=> a->b. Ou seja, `->` é apenas uma açúcar
+sintático.
+
+No StackOverflow, novamente, é possível ver uma resposta semelhante onde é
+citado o que foi dito acima.
+[[https://stackoverflow.com/questions/2896286/whats-the-difference-between-dot-operator-and-scope-resolution-operator][What's the difference between dot operator and scope resolution operator?]]
 
 #  LocalWords:  iostream cstdlib cout cmath sqrt cpp primep lm public
 #  LocalWords:  Structs keywords protected private protecteds getters
