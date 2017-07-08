@@ -8,9 +8,9 @@ Usei as bibliotecas:
 #include <cstdlib>
 #include <cmath>
 #+END_SRC
-Em iostream usei apenas cout. cstdlib precise para a funÁ„o atoi.
+Em iostream usei apenas cout. cstdlib precise para a fun√ß√£o atoi.
 cmath para sqrt.
-A linha de comando para compilaÁ„o foi:
+A linha de comando para compila√ß√£o foi:
 `g++ source.cpp -o primep -lm`
 
 O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
@@ -22,23 +22,23 @@ O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]
     CLOSED: [2017-07-05 qua 16:04]
     CLOCK: [2017-07-05 qua 14:31]--[2017-07-05 qua 14:47] =>  0:16
 
-Diferentemente de C, C++ implementa um tipo string n„o somente como uma cadeia
-de caracteres, mas como um objeto. Possui mÈtodos associados, como length.
-… bem ˙til.
+Diferentemente de C, C++ implementa um tipo string n√£o somente como uma cadeia
+de caracteres, mas como um objeto. Possui m√©todos associados, como length.
+√â bem √∫til.
 
 
 #+BEGIN_SRC cpp
-// inicializaÁ„o de string
+// inicializa√ß√£o de string
 string a = "abc";
 // tamanho
 a.size()
-// concatenaÁ„o
+// concatena√ß√£o
 string b = "def"
 string c = a + b; // "abcdef"
 
 #+END_SRC
 
-O primeiro exercÌcio do HackerRank:
+O primeiro exerc√≠cio do HackerRank:
 
 #+BEGIN_SRC cpp
 #include <iostream>
@@ -63,29 +63,29 @@ int main() {
 #+END_SRC
 
 
-Lidando com tamanho, concatenaÁ„o e substituiÁ„o de characteres
+Lidando com tamanho, concatena√ß√£o e substitui√ß√£o de characteres
 em strings.
 
 *** DONE Streams
     CLOSED: [2017-07-05 qua 16:20]
     SCHEDULED: <2017-07-05 qua>
     CLOCK: [2017-07-05 qua 15:01]--[2017-07-05 qua 16:09] =>  1:08
-Esse tÛpico refere-se ao gerenciamento de stream usando strings
-para C++. Muito interessante. O operador << insere informaÁ„o,
-por outro lado, o operador >> extrai informaÁ„o.
+Esse t√≥pico refere-se ao gerenciamento de stream usando strings
+para C++. Muito interessante. O operador << insere informa√ß√£o,
+por outro lado, o operador >> extrai informa√ß√£o.
 
 
-O mÈtodo ss cria stringstream cria uma stream. O cabeÁalho È sstream.
+O m√©todo ss cria stringstream cria uma stream. O cabe√ßalho √© sstream.
 [[file+emacs:Strings/strings-2.cpp][File: HackerRank-Problem-String]]
-O mÈtodo sstream::eof verifica se a stream est· no fim. EOF = End Of File.
+O m√©todo sstream::eof verifica se a stream est√° no fim. EOF = End Of File.
 
 *** DONE Attribute Parser
     CLOSED: [2017-07-06 qui 06:49]
     SCHEDULED: <2017-07-05 qua>
     CLOCK: [2017-07-05 qua 16:09]--[2017-07-06 qui 06:32] => 14:23 (horas!)
 
-Nessa atividade, a ˙ltima de strings, vou precisar fazer um parser de atributos
-em Cancer++. Um pouco da descriÁ„o do site È dada no block de cÛdigo abaixo.
+Nessa atividade, a √∫ltima de strings, vou precisar fazer um parser de atributos
+em Cancer++. Um pouco da descri√ß√£o do site √© dada no block de c√≥digo abaixo.
 
 #+BEGIN_SRC xml
 We have defined our own markup language HRML. In HRML, each element consists of
@@ -112,47 +112,47 @@ Not Found!
 HelloWorld
 #+END_SRC
 
-A atividade est· sendo desenvolvida no arquivo:
+A atividade est√° sendo desenvolvida no arquivo:
 [[file+emacs:Strings/strings-3-attribute-parser.cpp][File: Attribute Parser]]
 
-J· estou h· v·rias horas resolvendo esse problema. Sinceramente È um pouco
-trabalhoso. Agora È <2017-07-06 qui 01:50>. J· se passou mais de 8 horas...
-que inferno! Mas eu dormi um pouco antes tambÈm. Cassete! terminei agora depois
-de 14 horas! Uma completa desgraÁa! KKK
+J√° estou h√° v√°rias horas resolvendo esse problema. Sinceramente √© um pouco
+trabalhoso. Agora √© <2017-07-06 qui 01:50>. J√° se passou mais de 8 horas...
+que inferno! Mas eu dormi um pouco antes tamb√©m. Cassete! terminei agora depois
+de 14 horas! Uma completa desgra√ßa! KKK
 
 QUE INFERNO!!!!!! TERMINEI!!!!
 
 Primeiramente interpretei o problema um tanto errado, pensando que a primeira
-tag seria a raÌz da ·rvore. O que deu bastante problema para contornar.
-ApÛs isso havia v·rios erros, como o n„o tratamento de espaÁos antes das chaves,
-como indentaÁ„o. Isso n„o parece ter nenhum efeito durante a correÁ„o. Mas
-sÛ fui perceber todos os erros apÛs conseguir o SUITE TESTCASE #4 de um
-repositÛrio do github. O problema central, depois de corrigir a modelagem errada,
-era em relaÁ„o ao mÈtodo de pesquisa.
+tag seria a ra√≠z da √°rvore. O que deu bastante problema para contornar.
+Ap√≥s isso havia v√°rios erros, como o n√£o tratamento de espa√ßos antes das chaves,
+como indenta√ß√£o. Isso n√£o parece ter nenhum efeito durante a corre√ß√£o. Mas
+s√≥ fui perceber todos os erros ap√≥s conseguir o SUITE TESTCASE #4 de um
+reposit√≥rio do github. O problema central, depois de corrigir a modelagem errada,
+era em rela√ß√£o ao m√©todo de pesquisa.
 **
 ** IN-PROGRESS C++ & OO
-*** DONE IntroduÁ„o de C++ com OrientaÁ„o a Objetos
+*** DONE Introdu√ß√£o de C++ com Orienta√ß√£o a Objetos
    CLOSED: [2017-07-06 qui 20:57]
    SCHEDULED: <2017-07-05 qua>
    CLOCK: [2017-07-05 qua 14:00]--[2017-07-05 qua 14:29] =>  0:29
-Estou fazendo alguns exercÌcios de C++ no HackerRank. AtÈ agora n„o estou
-com muitos problemas. Na verdade C++ n„o È t„o difÌcil quanto eu pensei.
+Estou fazendo alguns exerc√≠cios de C++ no HackerRank. At√© agora n√£o estou
+com muitos problemas. Na verdade C++ n√£o √© t√£o dif√≠cil quanto eu pensei.
 De fato, na verdade, eu nunca tinha parado pra olhar direito como era a
-linguagem e sÛ ficava de tretinha b·sica.
+linguagem e s√≥ ficava de tretinha b√°sica.
 
-OO em C++ parece ser divertido, apesar de ainda ter uma impress„o cancerÌgina.
-N„o È pra menos... keywords, friend, public, private e protected?
+OO em C++ parece ser divertido, apesar de ainda ter uma impress√£o cancer√≠gina.
+N√£o √© pra menos... keywords, friend, public, private e protected?
 Mas, enfim, acho que vou conseguir me acostumar. Quero terminar hoje ainda a
-introduÁ„o, estou na ˙ltima parte envolvendo OO, heranÁa e vari·veis est·ticas.
+introdu√ß√£o, estou na √∫ltima parte envolvendo OO, heran√ßa e vari√°veis est√°ticas.
 
-MÈtodo virtuais em C++ s„o usados para fazer polimorfismo din‚micos em heranÁas.
-Protected s„o membros acessÌveis apenas pelas subclasses. Private s„o
-acessÌveis apenas pelos mÈtodos da classe. Public s„o publicos para todos.
+M√©todo virtuais em C++ s√£o usados para fazer polimorfismo din√¢micos em heran√ßas.
+Protected s√£o membros acess√≠veis apenas pelas subclasses. Private s√£o
+acess√≠veis apenas pelos m√©todos da classe. Public s√£o publicos para todos.
 
-Por padr„o, membros s„o privados em classes. … possÌvel usar a keyword friend
-para acessar atributos privados de outra classe. Provavelmente eu n„o deveria
-estar falando desses tÛpicos avanÁados de OO na introduÁ„o (HAHAH!). Mas
-È bom que d· o gostinho de desgraÁa que C++ tem tanto de especial.
+Por padr√£o, membros s√£o privados em classes. √â poss√≠vel usar a keyword friend
+para acessar atributos privados de outra classe. Provavelmente eu n√£o deveria
+estar falando desses t√≥picos avan√ßados de OO na introdu√ß√£o (HAHAH!). Mas
+√© bom que d√° o gostinho de desgra√ßa que C++ tem tanto de especial.
 #+BEGIN_SRC cpp
 const int NUMBER_OF_MARKS = 6;
 
@@ -232,30 +232,30 @@ int Student::count = 0;
 
 #+END_SRC
 
-Construtores podem ser definidos uma ou v·rias vezes.
-No entanto, destrutores sÛ podem ser definidos uma vez.
+Construtores podem ser definidos uma ou v√°rias vezes.
+No entanto, destrutores s√≥ podem ser definidos uma vez.
 
 *** DONE Structs
    CLOSED: [2017-07-06 qui 06:58]
    SCHEDULED: <2017-07-06 qui>
    CLOCK: [2017-07-06 qui 06:51]--[2017-07-06 qui 06:57] =>  0:06
 
-Os structs em C++ s„o semelhantes de C, no entanto eles s„o como classes
-com membros e mÈtodos p˙blicos por padr„o. Usualmente structs s„o usados apenas
-para agrupar membros de vari·veis numa estrutura compartilhada, podendo assim,
+Os structs em C++ s√£o semelhantes de C, no entanto eles s√£o como classes
+com membros e m√©todos p√∫blicos por padr√£o. Usualmente structs s√£o usados apenas
+para agrupar membros de vari√°veis numa estrutura compartilhada, podendo assim,
 criar estrutura de dados mais complexas.
 
-*** DONE B·sico de Classes
+*** DONE B√°sico de Classes
    CLOSED: [2017-07-06 qui 08:00]
    SCHEDULED: <2017-07-05 qua>
    CLOCK: [2017-07-06 qui 06:58]--[2017-07-06 qui 08:00] =>  1:02
 
-Por padr„o classes tem seus mÈtodos e atributos privados, sendo reservado as
+Por padr√£o classes tem seus m√©todos e atributos privados, sendo reservado as
 keywords para controle de acesso: protected, private e public.
-Uma pr·tica comum em C++ È deixar todos os atributos privados ou protecteds
-(case for uma classe base de heranÁa), ent„o criar getters e setters p˙blicos.
+Uma pr√°tica comum em C++ √© deixar todos os atributos privados ou protecteds
+(case for uma classe base de heran√ßa), ent√£o criar getters e setters p√∫blicos.
 
-Um exemplo de cÛdigo abaixo È dado:
+Um exemplo de c√≥digo abaixo √© dado:
 
 #+BEGIN_SRC cpp
 class Student {
@@ -285,45 +285,45 @@ public:
 *** DONE Class constructors
     CLOSED: [2017-07-06 qui 08:50]
     SCHEDULED: <2017-07-06 qui>
-Construtores s„o chamados na inicializaÁ„o de uma classe. Podem ter um ou mais,
+Construtores s√£o chamados na inicializa√ß√£o de uma classe. Podem ter um ou mais,
 com diferentes assinaturas.
-Os tipos de construtores s„o trÍs:
-        1. Construtor padr„o
+Os tipos de construtores s√£o tr√™s:
+        1. Construtor padr√£o
         2. Construtor parametrizado
-        3. Construtor de CÛpia
+        3. Construtor de C√≥pia
 [[file+emacs:Classes/constructor.cpp][File: ConstructorsExample]]
 
 *** DONE Exceptions
    CLOSED: [2017-07-06 qui 20:42]
    SCHEDULED: <2017-07-06 qui>
 
-C++ permite criar exceÁıes personalizadas ao criar uma heranÁa da classe
-`exception`. O mÈtodo descritivo da exceÁ„o È `const char* what(){}`.
+C++ permite criar exce√ß√µes personalizadas ao criar uma heran√ßa da classe
+`exception`. O m√©todo descritivo da exce√ß√£o √© `const char* what(){}`.
 Uma atividade simples foi feita em: [[file+emacs:Classes/exception.cpp][Exceptions.cpp]]
-Blocos try/catch s„o usados pra lidar com exceÁıes que ocorreram.
-throw Exception(); È usado para sinalizar uma exceÁ„o.
+Blocos try/catch s√£o usados pra lidar com exce√ß√µes que ocorreram.
+throw Exception(); √© usado para sinalizar uma exce√ß√£o.
 
-Minha proxima atividade no HackerRank È a respeito de um servidor para
-capturar exceÁıes customizadas.
+Minha proxima atividade no HackerRank √© a respeito de um servidor para
+capturar exce√ß√µes customizadas.
 [[file+emacs:Classes/CustomExceptions.cpp][CustomExceptions.cpp]]
 
-Todas as exceÁıes padrıes tem como base classe *std::exception*.
-Uma maneira simples de capturar uma exceÁ„o e imprimi-la, È desta maneira:
+Todas as exce√ß√µes padr√µes tem como base classe *std::exception*.
+Uma maneira simples de capturar uma exce√ß√£o e imprimi-la, √© desta maneira:
 
-#+NAME Exemplo de captura de exceÁ„o
+#+NAME Exemplo de captura de exce√ß√£o
 #+BEGIN_SRC cpp
-#include <exception> // definiÁ„o da classe base std::exception
-#include <stdexcept> // v·rias exceÁıes padrıes para ser usadas
+#include <exception> // defini√ß√£o da classe base std::exception
+#include <stdexcept> // v√°rias exce√ß√µes padr√µes para ser usadas
 try {
     std::cout << 1/0;
 } catch(std::exception const& e) {
     std::cout << "Erro do capeta: " << e.what();
 } catch(...) {
-    // essa sess„o captura qualquer exceÁ„o n„o esperada
+    // essa sess√£o captura qualquer exce√ß√£o n√£o esperada
 }
 #+END_SRC
 
-ExceÁıes definidas no cabeÁalho <stdexcept>
+Exce√ß√µes definidas no cabe√ßalho <stdexcept>
 - bad_alloc
 - bad_cast
 - bad_exception
@@ -339,33 +339,40 @@ ExceÁıes definidas no cabeÁalho <stdexcept>
   - underflow_error
 
 *** IN-PROGRESS Polymorphism and Abstract Base Classes
-    CLOCK: [2017-07-06 qui 20:49]
-    Comecei a fazer essa atividade agora ‡s <2017-07-06 qui 20:51>.
-Polimorfismo È quando um mÈtodo na heranÁa È modificado. Em C++
-existem as chamadas Classes Abstratas de Base, onde È permitido que elas
-possuam apenas mÈtodos virtuais para futuramente, numa heranÁa, realizar
+    CLOCK: [2017-07-06 qui 20:49]--[2017-07-07 sex 22:43] => 25:54
+    Comecei a fazer essa atividade agora √†s <2017-07-06 qui 20:51>.
+Polimorfismo √© quando um m√©todo na heran√ßa √© modificado. Em C++
+existem as chamadas Classes Abstratas de Base, onde √© permitido que elas
+possuam apenas m√©todos virtuais para futuramente, numa heran√ßa, realizar
 polimorfismo.
 
-Essa ˙ltima atividade È bem cabulosa. Para implementar um sistema de cache
-usando listas duplamente encadeadas e, alÈm disso, fazer de tal maneira que
+Essa √∫ltima atividade √© bem cabulosa. Para implementar um sistema de cache
+usando listas duplamente encadeadas e, al√©m disso, fazer de tal maneira que
 use os conceitos referentes a polimorfismo numa classe chamada Cache.
 
 As atividades a serem desenvolvidas aqui podem ser encontradas em:
-[[file+emacs:Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]]
+[[file+emacs:Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]].
 
-*** TODO Listas de inicializaÁ„o para construtores
+Depois de um dia tentando ter um progresso com essa atividade, j√° consegui
+implementar a funcionalidade b√°sica do Cache. No entanto, os tests com maiores
+entradas est√£o com problemas. De acordo com a execu√ß√£o do HackerRank, est√°
+ocorrendo segfault. Acredito que possa ser devido o n√£o tratamento direto
+da desoloca√ß√£o dos objetos N√≥ durante a chamada de void pop_node(); que
+desaloca a cauda da lista. Cont√≠nuo essa atividade mais tarde.
+*** TODO Listas de inicializa√ß√£o para construtores
     SCHEDULED: <2017-07-07 sex>
 *** TODO Testar separadores de escopo `::` e `.`
     SCHEDULED: <2017-07-07 sex>
+    Determinar em que casos √© poss√≠vel usar.
 
 ** STL :: C++ Standard Library
 *** DONE STL - Vector Sort
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
-A Standard Library de C++ vem com muitos bultins. Um dos mÈtodos
-da biblioteca  È std::sort(vector::begin, vector::end).
+A Standard Library de C++ vem com muitos bultins. Um dos m√©todos
+da biblioteca  √© std::sort(vector::begin, vector::end).
 
-#+NAME Ordenar n n˙meros
+#+NAME Ordenar n n√∫meros
 #+BEGIN_SRC cpp
 #include <cmath>
 #include <cstdio>
