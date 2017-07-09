@@ -618,7 +618,31 @@ Se o elemento não é encontrado it == s.end();
 Um problema para explorar essas operações é proposto no HackerRank,
 onde uma solução pode ser encontrada aqui: [[file+emacs:STL/Set.cpp][Set.cpp]]
 
-*** IN-PROGRESS Maps-STL
+*** DONE Maps-STL
+    CLOSED: [2017-07-09 dom 09:01] SCHEDULED: <2017-07-09 dom>
+    CLOCK: [2017-07-09 dom 08:43]--[2017-07-09 dom 09:01] =>  0:18
+
+HashMaps são implementados em C++ pela STL, Standard Library. Também conhecidos
+em outras linguagens como dicionários (python), HashMaps armazenam unidades de
+de pares <chave, valor> na qual a existência para uma dada chave é única.
+
+Existem alguns métodos úteis implementados para HashMaps. O tipo é definido
+em `#include <map>` e segue que:
+
+#+BEGIN_SRC cpp
+#include <map>
+
+std::map<int, string> m; // declaração
+m.insert(std::make_pair(1, "banana")); // inserção
+m[1] = "banana"; // açucar sintático para inserção
+m.erase("banana"); //remover elemento
+m.find(key); // m<int,string>::iterator
+// se um elemento não é encontrado então m.find(key) == m.end();
+m[1]; // "banana
+#+END_SRC
+
+Um problema é proposto no HackerRank para explorar essas operações.
+A implementação está feita no arquivo [[file+emacs:STL/HashMap.cpp][HashMap.cpp]].
 
 
 *** TODO Print Pretty
