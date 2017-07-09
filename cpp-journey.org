@@ -54,6 +54,7 @@ em strings.
     CLOSED: [2017-07-05 qua 16:20]
     SCHEDULED: <2017-07-05 qua>
     CLOCK: [2017-07-05 qua 15:01]--[2017-07-05 qua 16:09] =>  1:08
+
 Esse tópico refere-se ao gerenciamento de stream usando strings
 para C++. Muito interessante. O operador << insere informação,
 por outro lado, o operador >> extrai informação.
@@ -114,11 +115,13 @@ só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
 repositório do github. O problema central, depois de corrigir a modelagem errada,
 era em relação ao método de pesquisa.
 **
-** IN-PROGRESS OO
+** DONE OO
+   CLOSED: [2017-07-09 dom 00:02]
 *** DONE Introdução de C++ com Orientação a Objetos
    CLOSED: [2017-07-06 qui 20:57]
    SCHEDULED: <2017-07-05 qua>
    CLOCK: [2017-07-05 qua 14:00]--[2017-07-05 qua 14:29] =>  0:29
+
 Estou fazendo alguns exercícios de C++ no HackerRank. Até agora não estou
 com muitos problemas. Na verdade C++ não é tão difícil quanto eu pensei.
 De fato, na verdade, eu nunca tinha parado pra olhar direito como era a
@@ -269,6 +272,7 @@ public:
 *** DONE Class constructors
     CLOSED: [2017-07-06 qui 08:50]
     SCHEDULED: <2017-07-06 qui>
+
 Construtores são chamados na inicialização de uma classe. Podem ter um ou mais,
 com diferentes assinaturas.
 Os tipos de construtores são três:
@@ -325,7 +329,8 @@ Exceções definidas no cabeçalho <stdexcept>
     CLOSED: [2017-07-08 sáb 05:23]
     CLOCK: [2017-07-08 sáb 02:20]--[2017-07-08 sáb 05:21] =>  3:01
     CLOCK: [2017-07-06 qui 20:49]--[2017-07-07 sex 22:43] => 25:54
-    Comecei a fazer essa atividade agora às <2017-07-06 qui 20:51>.
+
+Comecei a fazer essa atividade agora às <2017-07-06 qui 20:51>.
 Polimorfismo é quando um método na herança é modificado. Em C++
 existem as chamadas Classes Abstratas de Base, onde é permitido que elas
 possuam apenas métodos virtuais para futuramente, numa herança, realizar
@@ -357,24 +362,29 @@ desse nó no HashMap mp, os testes do HackerRank passaram. Mas demorei demais pr
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
 difícil.
 
-*** IN-PROGRESS Inheritance
-    SCHEDULED: <2017-07-08 sáb>
+*** DONE Inheritance
+    CLOSED: [2017-07-09 dom 00:02] SCHEDULED: <2017-07-08 sáb>
+
 Este é um tópico especial envolvendo como funciona o conceito de herança
 em C++, todo mal da orientação objetos, como também é uma prática comum
 em muitos projetos que usam linguagens como C++.
 
 Estarei linkando nos próximos títulos os códigos-fontes de cada
 solução das questões.
+
 **** DONE Inheritance Introduction
      CLOSED: [2017-07-08 sáb 05:50] SCHEDULED: <2017-07-08 sáb>
+
 Nessa atividade é pedido pra construir um método de descrição de uma subclasse
 de Triangle chamada Isosceles. A construção é bem direta e não é necessário
 muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
 Mas vamos lá... [[file+emacs:Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
+
 **** DONE Rectangle Area
      CLOSED: [2017-07-08 sáb 06:22] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:12]--[2017-07-08 sáb 06:22] =>  0:10
-     Nesta atividade será feito um exercício para cálculo
+
+Nesta atividade será feito um exercício para cálculo
 da área de um retângulo usando os conceitos de herança. Durante
 a construção da solução foi possível perceber que era possível
 chamar métodos da classe base com mesmo nome, no caso ambos possuiam
@@ -415,15 +425,17 @@ A atividade é descrita em: [[file+emacs:Inheritance/AcessingInheritedFunctions.
 
 A questão pede para se chegar a um número de entrada usando apenas as classes
 de base A, B e C.
-**** IN-PROGRESS Magic Spells
-     SCHEDULED: <2017-07-08 sáb>
+**** DONE Magic Spells
+     CLOSED: [2017-07-09 dom 00:02] SCHEDULED: <2017-07-08 sáb>
+     CLOCK: [2017-07-08 sáb 21:57]--[2017-07-09 dom 00:01] =>  2:04
      CLOCK: [2017-07-08 sáb 07:31]--[2017-07-08 sáb 13:46] =>  6:15
-     Lá vem questão HARD de novo do inferno do HackerRank. Essa questão
+
+Lá vem questão HARD de novo do inferno do HackerRank. Essa questão
 envolve o uso de herança e dynamic_cast, que é basicamente o que tentei fazer
 uma vez em C e só me fudi (uma variável de tipo dinâmico). Parece que C++
 implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
 
-dynamic_cast é usado para modelar uma instância compatível com outro tipo
+Nesse caso dynamic_cast é usado para modelar uma instância compatível com outro tipo
 ou classe. Se um ponteiro é retornado, significa que os tipos não são compatíveis.
 Nessa questão isso é usado para saber que tipo de que classe derivada de Spell
 foi instanciada. A sintaxe é dada por dynamic_cast<Type*>(instance*). Muito
@@ -446,14 +458,55 @@ necessário, removendo o que tiver no meio entre elas.
 Vou dar uma pausa aqui nessa atividade agora às <2017-07-08 sáb 13:48>.
 Depois vou tentar voltar mais tarde. A parte inicial da atividade está feita
 em: [[file+emacs:Inheritance/MagicSpells.cpp][MagicSpells.cpp]]
-** TODO STL :: C++ Standard Library
+
+Estou de volta nessa atividade dos demônios. Realmente a detecção das classes
+filhas ao usar dynamic cast estão funcionando bem. Na verdade dynamic cast é
+um pouco diferente do que pensei, você não pode fazer conversão de tipos
+arbitrários, mas sim àqueles que são possíveis. Como no caso de um instância
+Pai para uma classe Filha (derivada, herdada).
+
+No entanto estou com problemas demais em relação a desgraça do algoritmo
+para de cálculo de maior substring recorrente entre duas strings, pois esse
+problema de fato não é o Longest Common Substring. Vou precisar fazer um algoritmo
+personalizado pra isso. Talvez eu devesse começar fazendo em Python pra facilitar
+a lógica e depois passar pra Câncer++.
+
+Agora tudo faz sentido, eu estava tentando resolver um problema com a solução
+para outro tipo de problema. Esse problema na verdade tem outro nome. Apesar
+de semelhante ao Longest Common Substring, este se chama Longest Common
+Subsequence. Uma solução em Python transcrita de um pseudo código pode ser vista
+abaixo:
+
+#+BEGIN_SRC python
+def LCSLength(X, Y):
+    from pprint import pprint
+    m, n = len(X) + 1, len(Y) + 1
+    C = [[0 for _ in range(n)] for _ in range(m)]
+    for i in range(1, m):
+        for j in range(1, n):
+            if X[i-1] == Y[j-1]:
+                C[i][j] = C[i-1][j-1] + 1
+            else:
+                C[i][j] = max(C[i][j-1], C[i-1][j])
+    pprint(C)
+    return C[n-1][m-1]
+#+END_SRC
+
+Vou tentar agora codificar isso em C++. Finalizado. Que desgraça hein.
+A parte mais difícil desse problema não era exatamente lidar com o dynamic_cast
+e detectar que classe filha estão sendo referenciadas. Na verdade esse problema
+aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse tópico
+é sobre herança, o que esse problema NP-Hard é simplemente sem relação!
+
+Mas terminado. Agora está tudo ok!
+** IN-PROGRESS STL :: C++ Standard Library
 *** DONE STL - Vector Sort
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
 A Standard Library de C++ vem com muitos bultins. Um dos métodos
 da biblioteca é std::sort(vector::begin, vector::end).
 
-#+NAME Ordenar n números
+#+CAPTION: Ordenar n números
 #+BEGIN_SRC cpp
 #include <cmath>
 #include <cstdio>
@@ -479,6 +532,78 @@ int main() {
 }
 
 #+END_SRC
+*** DONE Vector-Erase
+    CLOSED: [2017-07-09 dom 06:28] SCHEDULED: <2017-07-09 dom>
+    CLOCK: [2017-07-09 dom 06:25]--[2017-07-09 dom 06:28] =>  0:03
+
+A STL definida em <algorithm> e <vector> define alguns métodos
+úteis, como por exemplo o método vector::erase para remover elementos
+seja de apenas 1 localização, ou um intervalo.
+
+O seguinte código foi feito para o exercício proposto do hackerrank:
+#+BEGIN_SRC cpp
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+
+int main() {
+    vector<long> v;
+    int n,x,a,b;
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cin >> x;
+        v.push_back(x);
+    }
+
+    cin >> x;
+    v.erase(v.begin()+x-1);
+    cin >> a;
+    cin >> b;
+    v.erase(v.begin()+a-1, v.begin()+b-1);
+    cout << v.size() << endl;
+
+    for (int x : v) {
+        cout << x << " ";
+    }
+    return 0;
+}
+#+END_SRC
+
+Ou seja, há duas definições para vector::erase.
+- vector::erase(const iterator n);
+- vector::erase(const iterator n, const iterator m);
+
+O const iterator pode ser obtido a partido dos métodos:
+vector::begin e vector::end.
+
+*** DONE Lower Bound-STL
+    CLOSED: [2017-07-09 dom 08:02] SCHEDULED: <2017-07-09 dom>
+    CLOCK: [2017-07-09 dom 06:29]--[2017-07-09 dom 08:02] =>  1:33
+
+Em C++ a STL provém funções úteis para iterações e comparações.
+Um delas são os métodos std::lower_bound e std::upper_bound.
+Ambas funções recebem três parâmetros, os dois primeiros sendo
+o iterador inicial então o iterador final (vector::begin & vector::end).
+O terceiro elemento é um objeto de comparação que implementa operator<
+para std::lower_bound e std::upper_bound.
+
+O método std::lower_bound retorna o número menor que a comparação que esteja
+mais próximo desse número esquerda. std::upper_bound retorna o maior número que esteja
+mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.
+
+Pode-se encontrar uma solução para este problema no arquivo:
+[[file+emacs:STL/LowerBound.cpp][LowerBound.cpp]]
+
+
+*** TODO Sets-STL
+*** TODO Maps-STL
+*** TODO Print Pretty
+*** TODO Deque-STL
+
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
   SCHEDULED: <2017-07-05 qua>
@@ -495,7 +620,8 @@ A linha de comando para compilação foi:
 `g++ source.cpp -o primep -lm`
 
 O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
-* TODO Estudos de caso
+* DONE Estudos de caso
+  CLOSED: [2017-07-09 dom 06:48]
 ** DONE Listas de inicialização para construtores
    CLOSED: [2017-07-08 sáb 06:03] SCHEDULED: <2017-07-07 sex>
    CLOCK: [2017-07-08 sáb 05:52]--[2017-07-08 sáb 06:03] =>  0:11

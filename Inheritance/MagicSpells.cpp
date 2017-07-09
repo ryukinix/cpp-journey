@@ -71,7 +71,32 @@ void counterspell(Spell *spell) {
      } else if (dynamic_cast<Frostbite*>(spell) != NULL) {
           dynamic_cast<Frostbite*>(spell)->revealFrostpower();
      } else {
-          cout << "SEU CU" << endl;
+          // Longest Common Subsequence Algorithm
+          // Translated from Wikipedia Pseudo Code
+          const string& X = spell->revealScrollName();
+          const string& Y = SpellJournal::read();
+          int m = X.length() + 1;
+          int n = Y.length() + 1;
+          int i,j;
+          vector<vector<int>> C;
+
+          // setup size and initialize all elements to 0
+          C.resize(m);
+          for (i = 0; i < m; ++i) {
+               C[i].resize(n);
+          }
+
+          // do the giant black magic logic of the LCS
+          for(i = 1; i < m; i++) {
+               for(j = 1; j < n; j++) {
+                    if (X[i-1] == Y[j-1]) {
+                         C[i][j] = C[i-1][j-1] + 1;
+                    } else {
+                         C[i][j] = C[i][j-1] >= C[i-1][j] ? C[i][j-1] : C[i-1][j];
+                    }
+               }
+          }
+          cout << C[m-1][n-1] << endl;
      }
 }
 
@@ -103,8 +128,8 @@ public:
 
 int main() {
      int T;
-     cin >> T;
      Wizard Arawn;
+     cin >> T;
      while(T--) {
           Spell *spell = Arawn.cast();
           counterspell(spell);
