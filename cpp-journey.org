@@ -599,8 +599,28 @@ Pode-se encontrar uma solução para este problema no arquivo:
 [[file+emacs:STL/LowerBound.cpp][LowerBound.cpp]]
 
 
-*** TODO Sets-STL
-*** TODO Maps-STL
+*** DONE Sets-STL
+    CLOSED: [2017-07-09 dom 08:33] SCHEDULED: <2017-07-09 dom>
+    CLOCK: [2017-07-09 dom 08:12]--[2017-07-09 dom 08:33] =>  0:21
+
+Essa próxima atividade se refere a implementação de conjuntos na biblioteca
+padrão de C++. Definida no cabeçalho `#include <set>` os métodos conhecidos para
+o tipo set, são:
+
+- std::set<int> s;
+- s.length(); // tamanho do conjunto
+- s.erase(int n); // apagar um elemento
+- s.insert(int n); // inserir um elemento
+- set<int>::iterator it = s.find(int n); // procura um elemento, devolve um ptr
+
+Se o elemento não é encontrado it == s.end();
+
+Um problema para explorar essas operações é proposto no HackerRank,
+onde uma solução pode ser encontrada aqui: [[file+emacs:STL/Set.cpp][Set.cpp]]
+
+*** IN-PROGRESS Maps-STL
+
+
 *** TODO Print Pretty
 *** TODO Deque-STL
 
