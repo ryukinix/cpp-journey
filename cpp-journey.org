@@ -1,5 +1,4 @@
 * IN-PROGRESS HackerRank C++
-** DONE Strings
    CLOSED: [2017-07-06 qui 06:49]
 *** DONE The Type String
     SCHEDULED: <2017-07-05 qua>
@@ -598,7 +597,6 @@ mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.
 Pode-se encontrar uma solução para este problema no arquivo:
 [[file+emacs:STL/LowerBound.cpp][LowerBound.cpp]]
 
-
 *** DONE Sets-STL
     CLOSED: [2017-07-09 dom 08:33] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 08:12]--[2017-07-09 dom 08:33] =>  0:21
@@ -644,9 +642,85 @@ m[1]; // "banana
 Um problema é proposto no HackerRank para explorar essas operações.
 A implementação está feita no arquivo [[file+emacs:STL/HashMap.cpp][HashMap.cpp]].
 
+*** DONE Print Pretty
+    CLOSED: [2017-07-25 ter 17:50] SCHEDULED: <2017-07-24 Mon>
+    CLOCK: [2017-07-24 Mon 19:09]--[2017-07-25 ter 17:52] => 22:43
 
-*** TODO Print Pretty
+Preciso fazer essa atividade. Irei começar daqui a pouco. Basicamente
+a atividade é em relação a imprimir diferente tipos de dados com uma determinada
+característica. Por exemplos, notação científica para decimais. Números
+decimais prefixado e também números inteiros com caracteres prefixado.
+Parece que STL já implementa isso em algum lugar.
+
+A atividade será desenvolvida em: [[file:STL/PrettyPrint.cpp][PrettyPrint.cpp]]
+
+Maiores anotações virão a seguir.
+
+Bem... trabalhar com formatação de IO em C++ é no mínimo doloroso.
+Na verdade eu achei um completo inferno, mas vou tentar descrever algumas coisas
+que entendi.
+
+No cabeçalho <iomanip> é definido várias entradas para trabalhar com formatação
+de stringstreams, ou necessariamente IO.
+
+Entre diretrizes pra trabalhar com números de qualquer tipo tem-se:
+
+- showbase -- mostra a base do número, como hex e octal
+- noshowbase -- desativa a opção acima
+- showpos -- todos números são definidos com sinal prefixado +/-
+- noshowpos -- desativa a opção acima
+- setbase -- define qual é a base no parsing, por exemplo 16 -> hexadecimal
+- uppercase -- base e outros caracteres são usados em uppercase
+- nouppercase -- o contrário da opção acima
+
+Para setbase temos atalhos predefinidos como `hex`, `oct` e `dec`.
+
+Para preenchimento de string, largura máxima e alinhamento temos:
+
+- left -- alinha pela esquerda
+- right -- alinha pela direita
+- internal -- aplica a formação no número em si
+- setw -- define largura máxima
+- setfill -- recebe um caracter e preenche de acordo com a largura máxima esperada
+
+Para processamento de números flutuantes temos:
+
+- setprecision -- precisão em casas decimais
+- fixed -- notação prefixa => 10.001
+- scientific -- notação científica-> 3.30303E+03
+- default -- notação padrão
+
+Também tem hexfloat, mas isso é muito obscuro e não vou cobrir.
+
+
+Para fazer uma definição global de formação podemos usar setiosflags e resetiosflags.
+
+setiosflags recebe uma das flags acima não-parametrizada e define globalmente.
+Como o argumento esperado é uma bitmask, é possível fazer qualquer operação de bitwise.
+
+Por exemplo:
+#+BEGIN_SRC cpp
+#include <iostream>
+#include <iomanip>
+
+int main()
+{
+    std::cout <<  std::resetiosflags(std::ios_base::dec)
+              <<  std::setiosflags(  std::ios_base::hex
+                                   | std::ios_base::uppercase
+                                   | std::ios_base::showbase) << 42 << '\n';
+}
+
+// Output:
+// 0X2A
+
+#+END_SRC
+
+
+Isso é o básico. Mais informações estão [[http://en.cppreference.com/w/cpp/io/manip][aqui]].
+
 *** TODO Deque-STL
+    SCHEDULED: <2017-07-12 qua>
 
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
