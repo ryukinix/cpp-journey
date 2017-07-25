@@ -114,7 +114,7 @@ só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
 repositório do github. O problema central, depois de corrigir a modelagem errada,
 era em relação ao método de pesquisa.
 **
-** DONE OO
+** DONE Classes && OO
    CLOSED: [2017-07-09 dom 00:02]
 *** DONE Introdução de C++ com Orientação a Objetos
    CLOSED: [2017-07-06 qui 20:57]
@@ -361,7 +361,7 @@ desse nó no HashMap mp, os testes do HackerRank passaram. Mas demorei demais pr
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
 difícil.
 
-*** DONE Inheritance
+** DONE Inheritance
     CLOSED: [2017-07-09 dom 00:02] SCHEDULED: <2017-07-08 sáb>
 
 Este é um tópico especial envolvendo como funciona o conceito de herança
@@ -371,7 +371,7 @@ em muitos projetos que usam linguagens como C++.
 Estarei linkando nos próximos títulos os códigos-fontes de cada
 solução das questões.
 
-**** DONE Inheritance Introduction
+*** DONE Inheritance Introduction
      CLOSED: [2017-07-08 sáb 05:50] SCHEDULED: <2017-07-08 sáb>
 
 Nessa atividade é pedido pra construir um método de descrição de uma subclasse
@@ -379,7 +379,7 @@ de Triangle chamada Isosceles. A construção é bem direta e não é necessári
 muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
 Mas vamos lá... [[file+emacs:Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
 
-**** DONE Rectangle Area
+*** DONE Rectangle Area
      CLOSED: [2017-07-08 sáb 06:22] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:12]--[2017-07-08 sáb 06:22] =>  0:10
 
@@ -399,7 +399,7 @@ r_area.Rectangle::display();
 A solução completa pode ser encontrada aqui:
 [[file+emacs:Inheritance/RectangleArea.cpp][RectangleArea.cpp]]
 
-**** DONE Multi Level Inheritance
+*** DONE Multi Level Inheritance
      CLOSED: [2017-07-08 sáb 06:43] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:35]--[2017-07-08 sáb 06:43] =>  0:08
      É possível fazer herança em mais de um nível. Um exemplo é dado
@@ -412,7 +412,7 @@ e Triangle. O que é realmente verdade, já que um triângulo Equilátero
 A atividade foi direta de ser completa e está descrita a seguir:
 [[file+emacs:Inheritance/IsoscelesEquilateral.cpp][IsoscelesEquilateral.cpp]]
 
-**** DONE Accessing Inherited Functions
+*** DONE Accessing Inherited Functions
      CLOSED: [2017-07-08 sáb 07:21] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:48]--[2017-07-08 sáb 07:21] =>  0:33
      Como comentada na questão Rectangle Area, é possível acessar
@@ -424,7 +424,7 @@ A atividade é descrita em: [[file+emacs:Inheritance/AcessingInheritedFunctions.
 
 A questão pede para se chegar a um número de entrada usando apenas as classes
 de base A, B e C.
-**** DONE Magic Spells
+*** DONE Magic Spells
      CLOSED: [2017-07-09 dom 00:02] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 21:57]--[2017-07-09 dom 00:01] =>  2:04
      CLOCK: [2017-07-08 sáb 07:31]--[2017-07-08 sáb 13:46] =>  6:15
@@ -609,7 +609,7 @@ o tipo set, são:
 - s.length(); // tamanho do conjunto
 - s.erase(int n); // apagar um elemento
 - s.insert(int n); // inserir um elemento
-- set<int>::iterator it = s.find(int n); // procura um elemento, devolve um ptr
+- set<int>::iterator it = s.find(int n); // procura um elemento, devolve um iterator
 
 Se o elemento não é encontrado it == s.end();
 
@@ -720,7 +720,7 @@ int main()
 Isso é o básico. Mais informações estão [[http://en.cppreference.com/w/cpp/io/manip][aqui]].
 
 *** TODO Deque-STL
-    SCHEDULED: <2017-07-12 qua>
+    SCHEDULED: <2017-07-25 ter>
 
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
