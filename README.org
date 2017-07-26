@@ -1,3 +1,58 @@
+#+STARTUP: showall
+#+STARTUP: hidestars
+#+OPTIONS: H:3 num:nil tags:nil \n:t ^:nil todo:nil tasks:done toc:nil timestamps:t
+#+TAGS: C++, Programming, HackerRank
+#+LAYOUT: post
+#+AUTHOR: Manoel Vilela
+#+DATE: 2017-07-26 Wed 14:48
+#+TITLE: C++ Journey
+#+DESCRIPTION: Uma jornada no mundo infernal de C++ através do HackerRank
+#+CATEGORIES: C++, Programming
+#+COMMENTS: true
+#+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
+
+
+* Tabela de Conteúdos  :TOC_3_gh:
+:PROPERTIES:
+:CUSTOM_ID: toc-org
+:END:
+- [[Descrição][Descrição]]
+- [[HackerRank C++][HackerRank C++]]
+    - [[The Type String][The Type String]]
+    - [[Streams][Streams]]
+    - [[Attribute Parser][Attribute Parser]]
+  - [[Orientação a Objetos][Orientação a Objetos]]
+    - [[Introdução][Introdução]]
+    - [[Structs][Structs]]
+    - [[Básico de Classes][Básico de Classes]]
+    - [[Class constructors][Class constructors]]
+    - [[Exceptions][Exceptions]]
+    - [[Polymorphism and Abstract Base Classes][Polymorphism and Abstract Base Classes]]
+  - [[Inheritance][Inheritance]]
+    - [[Inheritance Introduction][Inheritance Introduction]]
+    - [[Rectangle Area][Rectangle Area]]
+    - [[Multi Level Inheritance][Multi Level Inheritance]]
+    - [[Accessing Inherited Functions][Accessing Inherited Functions]]
+    - [[Magic Spells][Magic Spells]]
+  - [[STL - C++ Standard Library][STL - C++ Standard Library]]
+    - [[Vector Sort][Vector Sort]]
+    - [[Vector-Erase][Vector-Erase]]
+    - [[Lower Bound][Lower Bound]]
+    - [[Sets][Sets]]
+    - [[Maps][Maps]]
+    - [[Print Pretty][Print Pretty]]
+    - [[Deque][Deque]]
+- [[C++ prime checking][C++ prime checking]]
+- [[Estudos de caso][Estudos de caso]]
+  - [[Listas de inicialização para construtores][Listas de inicialização para construtores]]
+  - [[Separadores de escopo ~::~ e ~.~][Separadores de escopo ~::~ e ~.~]]
+
+* DONE Descrição
+
+Minha jornada com C++ no HackerRank principalmente e outras coisas. Na maioria
+das questões não uso todos os recursos de ~C++14~, mas às vezes sim. Assume-se,
+por via das dúvidas, que todos arquivos estão no padrão ~C++14~.
+
 * DONE HackerRank C++
    CLOSED: [2017-07-26 qua 14:34]
 *** DONE The Type String
@@ -10,7 +65,7 @@ de caracteres, mas como um objeto. Possui métodos associados, como length.
 É bem útil.
 
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 // inicialização de string
 string a = "abc";
 // tamanho
@@ -23,7 +78,7 @@ string c = a + b; // "abcdef"
 
 O primeiro exercício do HackerRank:
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <iostream>
 #include <string>
 #include <algorithm>
@@ -59,8 +114,8 @@ para C++. Muito interessante. O operador << insere informação,
 por outro lado, o operador >> extrai informação.
 
 
-O método ss cria stringstream cria uma stream. O cabeçalho é sstream.
-[[file+emacs:Strings/strings-2.cpp][File: HackerRank-Problem-String]]
+O método de inicialização da stringstream cria uma stream. O cabeçalho é ~<sstream>~.
+[[https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-2.cpp][HackerRank-Problem-String]]
 O método sstream::eof verifica se a stream está no fim. EOF = End Of File.
 
 *** DONE Attribute Parser
@@ -97,7 +152,7 @@ HelloWorld
 #+END_SRC
 
 A atividade está sendo desenvolvida no arquivo:
-[[file+emacs:Strings/strings-3-attribute-parser.cpp][File: Attribute Parser]]
+[[https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-3-attribute-parser.cpp][Attribute Parser]]
 
 Já estou há várias horas resolvendo esse problema. Sinceramente é um pouco
 trabalhoso. Agora é <2017-07-06 qui 01:50>. Já se passou mais de 8 horas...
@@ -114,9 +169,9 @@ só fui perceber todos os erros após conseguir o SUITE TESTCASE #4 de um
 repositório do github. O problema central, depois de corrigir a modelagem errada,
 era em relação ao método de pesquisa.
 **
-** DONE Classes && OO
+** DONE Orientação a Objetos
    CLOSED: [2017-07-09 dom 00:02]
-*** DONE Introdução de C++ com Orientação a Objetos
+*** DONE Introdução
    CLOSED: [2017-07-06 qui 20:57]
    SCHEDULED: <2017-07-05 qua>
    CLOCK: [2017-07-05 qua 14:00]--[2017-07-05 qua 14:29] =>  0:29
@@ -139,7 +194,7 @@ Por padrão, membros são privados em classes. É possível usar a keyword frien
 para acessar atributos privados de outra classe. Provavelmente eu não deveria
 estar falando desses tópicos avançados de OO na introdução (HAHAH!). Mas
 é bom que dá o gostinho de desgraça que C++ tem tanto de especial.
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 const int NUMBER_OF_MARKS = 6;
 
 class Person {
@@ -162,7 +217,8 @@ public:
         count += 1;
     }
     virtual void putdata(void) {
-        // The function putdata should print the name, age, publications and the cur_id of the professor.
+        // The function putdata should print the name, age,
+        // publications and the cur_id of the professor.
         cout << name << " ";
         cout << age << " ";
         cout << publications << " ";
@@ -194,7 +250,8 @@ public:
         count += 1;
     }
     virtual void putdata(void) {
-        // The function putdata should print the name, age, sum of the marks and the cur_id of the student.
+        // The function putdata should print the name, age,
+        // sum of the marks and the cur_id of the student.
         cout << name << " ";
         cout << age << " ";
         cout << _sum_marks() << " ";
@@ -243,7 +300,7 @@ Uma prática comum em C++ é deixar todos os atributos privados ou protecteds
 
 Um exemplo de código abaixo é dado:
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 class Student {
 private:
     string name;
@@ -272,33 +329,33 @@ public:
     CLOSED: [2017-07-06 qui 08:50]
     SCHEDULED: <2017-07-06 qui>
 
-Construtores são chamados na inicialização de uma classe. Podem ter um ou mais,
+Construtores são chamados na inicialização de uma classe. Podem possuir um ou mais,
 com diferentes assinaturas.
 Os tipos de construtores são três:
         1. Construtor padrão
         2. Construtor parametrizado
         3. Construtor de Cópia
-[[file+emacs:Classes/constructor.cpp][File: ConstructorsExample]]
+
+Exemplo: [[https://github.com/ryukinix/cpp-journey/tree/master/Classes/constructor.cpp][ConstructorsExample.cpp]]
 
 *** DONE Exceptions
    CLOSED: [2017-07-06 qui 20:42]
    SCHEDULED: <2017-07-06 qui>
 
 C++ permite criar exceções personalizadas ao criar uma herança da classe
-`exception`. O método descritivo da exceção é `const char* what(){}`.
-Uma atividade simples foi feita em: [[file+emacs:Classes/exception.cpp][Exceptions.cpp]]
-Blocos try/catch são usados pra lidar com exceções que ocorreram.
-throw Exception(); é usado para sinalizar uma exceção.
+~exception~. O método descritivo da exceção é ~const char* what(){}~.
+Uma atividade simples foi feita em: [[https://github.com/ryukinix/cpp-journey/tree/master/Classes/exception.cpp][Exceptions.cpp]]
+Blocos ~try/catch~ são usados pra lidar com exceções que ocorreram.
+~throw Exception();~ é usado para sinalizar uma exceção.
 
-Minha proxima atividade no HackerRank é a respeito de um servidor para
+Minha próxima atividade no HackerRank é a respeito de um servidor para
 capturar exceções customizadas.
-[[file+emacs:Classes/CustomExceptions.cpp][CustomExceptions.cpp]]
+[[https://github.com/ryukinix/cpp-journey/tree/master/Classes/CustomExceptions.cpp][CustomExceptions.cpp]]
 
-Todas as exceções padrões tem como base classe *std::exception*.
+Todas as exceções padrões tem como base classe ~std::exception~.
 Uma maneira simples de capturar uma exceção e imprimi-la, é desta maneira:
 
-#+NAME Exemplo de captura de exceção
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <exception> // definição da classe base std::exception
 #include <stdexcept> // várias exceções padrões para ser usadas
 try {
@@ -311,19 +368,19 @@ try {
 #+END_SRC
 
 Exceções definidas no cabeçalho <stdexcept>
-- bad_alloc
-- bad_cast
-- bad_exception
-- bad_typeid
-- logic_error
-  - domain_error
-  - invalid_argument
-  - length_error
-  - out_of_range
-- runtime_error
-  - range_error
-  - overflow_error
-  - underflow_error
+- ~bad_alloc~
+- ~bad_cast~
+- ~bad_exception~
+- ~bad_typeid~
+- ~logic_error~
+  - ~domain_error~
+  - ~invalid_argument~
+  - ~length_error~
+  - ~out_of_range~
+- ~runtime_error~
+  - ~range_error~
+  - ~overflow_error~
+  - ~underflow_error~
 *** DONE Polymorphism and Abstract Base Classes
     CLOSED: [2017-07-08 sáb 05:23]
     CLOCK: [2017-07-08 sáb 02:20]--[2017-07-08 sáb 05:21] =>  3:01
@@ -335,29 +392,29 @@ existem as chamadas Classes Abstratas de Base, onde é permitido que elas
 possuam apenas métodos virtuais para futuramente, numa herança, realizar
 polimorfismo.
 
-Essa última atividade é bem cabulosa. O objetivo é implementar um sistema
-de cache usando listas duplamente encadeadas e, além disso, fazer de tal maneira
+Essa última atividade é bem /cabulosa/. O objetivo é implementar um sistema
+de /cache/ usando listas duplamente encadeadas e, além disso, fazer de tal maneira
 que use os conceitos referentes a polimorfismo numa classe chamada Cache.
 
 As atividades a serem desenvolvidas aqui podem ser encontradas em:
-[[file+emacs:Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]].
+[[https://github.com/ryukinix/cpp-journey/tree/master/Classes/AbstractPolymorphism.cpp][AbstractPolymorphism.cpp]].
 
 Depois de um dia tentando ter um progresso com essa atividade, já consegui
-implementar a funcionalidade básica do Cache. No entanto, os tests com maiores
+implementar a funcionalidade básica do ~Cache~. No entanto, os testes com maiores
 entradas estão com problemas. De acordo com a execução do HackerRank, está
-ocorrendo segfault. Acredito que possa ser devido o não tratamento direto
+ocorrendo ~segfault~. Acredito que possa ser devido o não tratamento direto
 da desalocação dos objetos Nó durante a chamada de void pop_node(); que
 desaloca a cauda da lista. Contínuo essa atividade mais tarde.
 
-De fato durante o pop_node(); há um vazamento de memória. A referência do objeto
+De fato durante o ~pop_node()~; há um vazamento de memória. A referência do objeto
 é perdida, mas no entanto o objeto em si não é removido. Foi realizado uma
-verificação manual na versão deste [commit](bb6741d41c74cca1974bb41f3cd0f865a0d7be2c).
+verificação manual na versão deste [[https://github.com/ryukinix/cpp-journey/tree/master/commit/bb6741d41c74cca1974bb41f3cd0f865a0d7be2c][commit]].
 A estratégia assumida é para gerenciar corretamente a memória durante as novas
 alocações.
 
-Como eu suspeitava, a função LRUCache::pop_node() que estava vazando memória.
+Como eu suspeitava, a função `LRUCache::pop_node()` que estava vazando memória.
 Após a adição das instruções pra desalocar tanto a cauda como também a entrada
-desse nó no HashMap mp, os testes do HackerRank passaram. Mas demorei demais pra
+desse nó no ~HashMap mp~, os testes do HackerRank passaram. Mas demorei demais pra
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
 difícil.
 
@@ -377,7 +434,7 @@ solução das questões.
 Nessa atividade é pedido pra construir um método de descrição de uma subclasse
 de Triangle chamada Isosceles. A construção é bem direta e não é necessário
 muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
-Mas vamos lá... [[file+emacs:Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
+Mas vamos lá... [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
 
 *** DONE Rectangle Area
      CLOSED: [2017-07-08 sáb 06:22] SCHEDULED: <2017-07-08 sáb>
@@ -391,13 +448,13 @@ o método void display, mas a instância do objeto era RectangleArea.
 Para acessar então, display de Rectangle, foi necessário a seguinte
 sintaxe:
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 RectangleArea r_area;
 r_area.Rectangle::display();
 #+END_SRC
 
 A solução completa pode ser encontrada aqui:
-[[file+emacs:Inheritance/RectangleArea.cpp][RectangleArea.cpp]]
+[[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/RectangleArea.cpp][RectangleArea.cpp]]
 
 *** DONE Multi Level Inheritance
      CLOSED: [2017-07-08 sáb 06:43] SCHEDULED: <2017-07-08 sáb>
@@ -410,7 +467,7 @@ e Triangle. O que é realmente verdade, já que um triângulo Equilátero
 é obviamente também um Triângulo e é Isósceles.
 
 A atividade foi direta de ser completa e está descrita a seguir:
-[[file+emacs:Inheritance/IsoscelesEquilateral.cpp][IsoscelesEquilateral.cpp]]
+[[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/IsoscelesEquilateral.cpp][IsoscelesEquilateral.cpp]]
 
 *** DONE Accessing Inherited Functions
      CLOSED: [2017-07-08 sáb 07:21] SCHEDULED: <2017-07-08 sáb>
@@ -420,7 +477,7 @@ funções/métodos da classe base que foi herdada. Nessa atividade
 irei descrever brevemente a implementação do exercício proposto no
 HackerRank.
 
-A atividade é descrita em: [[file+emacs:Inheritance/AcessingInheritedFunctions.cpp][AcessingInheritedFunctions.cpp]]
+A atividade é descrita em: [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/AcessingInheritedFunctions.cpp][AcessingInheritedFunctions.cpp]]
 
 A questão pede para se chegar a um número de entrada usando apenas as classes
 de base A, B e C.
@@ -429,15 +486,15 @@ de base A, B e C.
      CLOCK: [2017-07-08 sáb 21:57]--[2017-07-09 dom 00:01] =>  2:04
      CLOCK: [2017-07-08 sáb 07:31]--[2017-07-08 sáb 13:46] =>  6:15
 
-Lá vem questão HARD de novo do inferno do HackerRank. Essa questão
-envolve o uso de herança e dynamic_cast, que é basicamente o que tentei fazer
-uma vez em C e só me fudi (uma variável de tipo dinâmico). Parece que C++
-implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
+Lá vem questão *HARD* de novo diretamente do inferno no HackerRank. Essa questão
+envolve o uso de herança e ~dynamic_cast~, que é basicamente o que tentei fazer
+uma vez em C e só me fudi (uma variável de tipo dinâmico, acabei terminando com um ~union~ e ~enum~).
+Parece que C++ implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
 
-Nesse caso dynamic_cast é usado para modelar uma instância compatível com outro tipo
-ou classe. Se um ponteiro é retornado, significa que os tipos não são compatíveis.
-Nessa questão isso é usado para saber que tipo de que classe derivada de Spell
-foi instanciada. A sintaxe é dada por dynamic_cast<Type*>(instance*). Muito
+Nesse caso ~dynamic_cast~ é usado para modelar uma instância compatível com outro tipo
+ou classe. Se um ~nullptr~ é retornado, significa que os tipos não são compatíveis.
+Nessa questão isso é usado para saber que tipo de que classe derivada de ~Spell~
+foi instanciada. A sintaxe é dada por ~dynamic_cast<Type*>(instance*)~. Muito
 semelhante ao cast estático de C.
 
 Estou tendo alguns problemas para construir um algoritmo do tipo LCS.
@@ -448,7 +505,7 @@ e a do catálogo, devo retornar o tamanho da substring maior.
 
 Ou seja, é dado o exemplo que para AquaVitae e AruTaVae a maior substring é
 AuaVae. Não tenho tanta certeza se isso está correto, mas achei um código exemplo
-em C++ pra testar. Está linkado em [[file+emacs:Inheritance/LongestCommonSubstring.cpp][LongestCommonSubstring.cpp]]
+em C++ pra testar. Está linkado em [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/LongestCommonSubstring.cpp][LongestCommonSubstring.cpp]]
 
 Minha desconfiança sobre isso é da natureza que esse exemplo não retorna
 exatamente a maior substring e sim a maior cadeia possível em sequência, se
@@ -456,7 +513,7 @@ necessário, removendo o que tiver no meio entre elas.
 
 Vou dar uma pausa aqui nessa atividade agora às <2017-07-08 sáb 13:48>.
 Depois vou tentar voltar mais tarde. A parte inicial da atividade está feita
-em: [[file+emacs:Inheritance/MagicSpells.cpp][MagicSpells.cpp]]
+em: [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/MagicSpells.cpp][MagicSpells.cpp]]
 
 Estou de volta nessa atividade dos demônios. Realmente a detecção das classes
 filhas ao usar dynamic cast estão funcionando bem. Na verdade dynamic cast é
@@ -497,17 +554,16 @@ e detectar que classe filha estão sendo referenciadas. Na verdade esse problema
 aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse tópico
 é sobre herança, o que esse problema NP-Hard é simplemente sem relação!
 
-Mas terminado. Agora está tudo ok!
-** DONE STL :: C++ Standard Library
+** DONE STL - C++ Standard Library
    CLOSED: [2017-07-26 qua 14:34]
-*** DONE STL - Vector Sort
+*** DONE Vector Sort
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
 A Standard Library de C++ vem com muitos bultins. Um dos métodos
 da biblioteca é std::sort(vector::begin, vector::end).
 
 #+CAPTION: Ordenar n números
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -541,7 +597,7 @@ A STL definida em <algorithm> e <vector> define alguns métodos
 seja de apenas 1 localização, ou um intervalo.
 
 O seguinte código foi feito para o exercício proposto do hackerrank:
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <cmath>
 #include <cstdio>
 #include <vector>
@@ -580,7 +636,7 @@ Ou seja, há duas definições para vector::erase.
 O const iterator pode ser obtido a partido dos métodos:
 vector::begin e vector::end.
 
-*** DONE Lower Bound-STL
+*** DONE Lower Bound
     CLOSED: [2017-07-09 dom 08:02] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 06:29]--[2017-07-09 dom 08:02] =>  1:33
 
@@ -596,14 +652,14 @@ mais próximo desse número esquerda. std::upper_bound retorna o maior número q
 mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.
 
 Pode-se encontrar uma solução para este problema no arquivo:
-[[file+emacs:STL/LowerBound.cpp][LowerBound.cpp]]
+[[https://github.com/ryukinix/cpp-journey/tree/master/STL/LowerBound.cpp][LowerBound.cpp]]
 
-*** DONE Sets-STL
+*** DONE Sets
     CLOSED: [2017-07-09 dom 08:33] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 08:12]--[2017-07-09 dom 08:33] =>  0:21
 
 Essa próxima atividade se refere a implementação de conjuntos na biblioteca
-padrão de C++. Definida no cabeçalho `#include <set>` os métodos conhecidos para
+padrão de C++. Definida no cabeçalho ~#include <set>~ os métodos conhecidos para
 o tipo set, são:
 
 - std::set<int> s;
@@ -615,9 +671,9 @@ o tipo set, são:
 Se o elemento não é encontrado it == s.end();
 
 Um problema para explorar essas operações é proposto no HackerRank,
-onde uma solução pode ser encontrada aqui: [[file+emacs:STL/Set.cpp][Set.cpp]]
+onde uma solução pode ser encontrada aqui: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/Set.cpp][Set.cpp]]
 
-*** DONE Maps-STL
+*** DONE Maps
     CLOSED: [2017-07-09 dom 09:01] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 08:43]--[2017-07-09 dom 09:01] =>  0:18
 
@@ -626,9 +682,9 @@ em outras linguagens como dicionários (python), HashMaps armazenam unidades de
 de pares <chave, valor> na qual a existência para uma dada chave é única.
 
 Existem alguns métodos úteis implementados para HashMaps. O tipo é definido
-em `#include <map>` e segue que:
+em ~#include <map>~ e segue que:
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <map>
 
 std::map<int, string> m; // declaração
@@ -641,7 +697,7 @@ m[1]; // "banana
 #+END_SRC
 
 Um problema é proposto no HackerRank para explorar essas operações.
-A implementação está feita no arquivo [[file+emacs:STL/HashMap.cpp][HashMap.cpp]].
+A implementação está feita no arquivo [[https://github.com/ryukinix/cpp-journey/tree/master/STL/HashMap.cpp][HashMap.cpp]].
 
 *** DONE Print Pretty
     CLOSED: [2017-07-25 ter 17:50] SCHEDULED: <2017-07-24 Mon>
@@ -653,7 +709,7 @@ característica. Por exemplos, notação científica para decimais. Números
 decimais prefixado e também números inteiros com caracteres prefixado.
 Parece que STL já implementa isso em algum lugar.
 
-A atividade será desenvolvida em: [[file:STL/PrettyPrint.cpp][PrettyPrint.cpp]]
+A atividade será desenvolvida em: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/PrettyPrint.cpp][PrettyPrint.cpp]]
 
 Maiores anotações virão a seguir.
 
@@ -661,46 +717,45 @@ Bem... trabalhar com formatação de IO em C++ é no mínimo doloroso.
 Na verdade eu achei um completo inferno, mas vou tentar descrever algumas coisas
 que entendi.
 
-No cabeçalho <iomanip> é definido várias entradas para trabalhar com formatação
+No cabeçalho ~<iomanip>~ é definido várias entradas para trabalhar com formatação
 de stringstreams, ou necessariamente IO.
 
 Entre diretrizes pra trabalhar com números de qualquer tipo tem-se:
 
-- showbase -- mostra a base do número, como hex e octal
-- noshowbase -- desativa a opção acima
-- showpos -- todos números são definidos com sinal prefixado +/-
-- noshowpos -- desativa a opção acima
-- setbase -- define qual é a base no parsing, por exemplo 16 -> hexadecimal
-- uppercase -- base e outros caracteres são usados em uppercase
-- nouppercase -- o contrário da opção acima
+- ~showbase~ -- mostra a base do número, como hex e octal
+- ~noshowbase~ -- desativa a opção acima
+- ~showpos~ -- todos números são definidos com sinal prefixado +/-
+- ~noshowpos~ -- desativa a opção acima
+- ~setbase~ -- define qual é a base no parsing, por exemplo 16 -> hexadecimal
+- ~uppercase~ -- base e outros caracteres são usados em uppercase
+- ~nouppercase~ -- o contrário da opção acima
 
-Para setbase temos atalhos predefinidos como `hex`, `oct` e `dec`.
+Para setbase temos atalhos predefinidos como ~hex~, ~oct~ e ~dec~.
 
 Para preenchimento de string, largura máxima e alinhamento temos:
 
-- left -- alinha pela esquerda
-- right -- alinha pela direita
-- internal -- aplica a formação no número em si
-- setw -- define largura máxima
-- setfill -- recebe um caracter e preenche de acordo com a largura máxima esperada
+- ~left~ -- alinha pela esquerda
+- ~right~ -- alinha pela direita
+- ~internal~ -- aplica a formação no número em si
+- ~setw~ -- define largura máxima
+- ~setfill~ -- recebe um caracter e preenche de acordo com a largura máxima esperada
 
 Para processamento de números flutuantes temos:
 
-- setprecision -- precisão em casas decimais
-- fixed -- notação prefixa => 10.001
-- scientific -- notação científica-> 3.30303E+03
-- default -- notação padrão
+- ~setprecision~ -- precisão em casas decimais
+- ~fixed~ -- notação prefixa => 10.001
+- ~scientific~ -- notação científica-> 3.30303E+03
+- ~default~ -- notação padrão
 
 Também tem hexfloat, mas isso é muito obscuro e não vou cobrir.
 
+Para fazer uma definição global de formação podemos usar ~setiosflags~ e ~resetiosflags~.
 
-Para fazer uma definição global de formação podemos usar setiosflags e resetiosflags.
-
-setiosflags recebe uma das flags acima não-parametrizada e define globalmente.
-Como o argumento esperado é uma bitmask, é possível fazer qualquer operação de bitwise.
+~setiosflags~ recebe uma das ~flags~ acima não-parametrizada e define globalmente.
+Como o argumento esperado é uma ~bitmask~, é possível fazer qualquer operação de ~bitwise~.
 
 Por exemplo:
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <iostream>
 #include <iomanip>
 
@@ -720,7 +775,7 @@ int main()
 
 Isso é o básico. Mais informações estão [[http://en.cppreference.com/w/cpp/io/manip][aqui]].
 
-*** DONE Deque-STL
+*** DONE Deque
     CLOSED: [2017-07-26 qua 14:27] SCHEDULED: <2017-07-25 ter>
     CLOCK: [2017-07-25 ter 21:27]--[2017-07-26 qua 14:27] => 17:00
 
@@ -744,14 +799,14 @@ os índices do array. Quando terminar o subarray, imprimir a cabeça do deque
 e remover se ele não pertencer ao próximo array. Lembre-se que para cada sub-array,
 os indices x <= (i - k) não pertencem mais ao sub-array.
 
-Uma aproximação ótima pode ser descrita nesta implementação: [[file:STL/Deque.cpp][Deque.cpp]]
+Uma aproximação ótima pode ser descrita nesta implementação: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/Deque.cpp][Deque.cpp]]
 
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
   SCHEDULED: <2017-07-05 qua>
   CLOCK: [2017-07-05 qua 14:29]--[2017-07-05 qua 14:30] =>  0:01
 Usei as bibliotecas:
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 #include <iostream>
 #include <cstdlib>
 #include <cmath>
@@ -759,9 +814,9 @@ Usei as bibliotecas:
 Em iostream usei apenas cout. cstdlib precisei para a função atoi.
 cmath para sqrt.
 A linha de comando para compilação foi:
-`g++ source.cpp -o primep -lm`
+~g++ source.cpp -o primep -lm~
 
-O arquivo pode ser encontrado em: [[file+emacs:Intro/primep.cpp][Prime Checking]]
+O arquivo pode ser encontrado em: [[https://github.com/ryukinix/cpp-journey/tree/master/Intro/primep.cpp][Prime Checking]]
 * DONE Estudos de caso
   CLOSED: [2017-07-09 dom 06:48]
 ** DONE Listas de inicialização para construtores
@@ -771,7 +826,7 @@ Listas de inicialização é um tipo de sintaxe para escrever
 brevemente construtores de classes, geralmente para inicializar valores.
 A sintaxe é usada como a seguir:
 
-#+BEGIN_SRC cpp
+#+BEGIN_SRC C++
 struct Node {
    int value;
    Node* next;
@@ -796,14 +851,14 @@ Ou seja, por conta de dependência entre os possíveis valores, a dependência
 é que o destruidor destrói os membros de um objeto na ordem inversa de
 construção, logo, a ordem importa e deve ser mantida.
 
-** DONE Testar separadores de escopo `::` e `.`
+** DONE Separadores de escopo ~::~ e ~.~
    CLOSED: [2017-07-08 sáb 06:06] SCHEDULED: <2017-07-07 sex>
    CLOCK: [2017-07-08 sáb 06:00]--[2017-07-08 sáb 06:06] =>  0:06
-   O operador `::` é usado como separador de escopo e acessar
-métodos/atributos estáticos. Por outro lado, `.` é usado apenas para
+   O operador ~::~ é usado como separador de escopo e acessar
+métodos/atributos estáticos. Por outro lado, ~.~ é usado apenas para
 acessar métodos/atributos de uma classe/struct que tenha instância. Além disso,
-o operador `->` é usado no lugar de `.` quando o objeto é um ponteiro.
-Ou seja, na verdade, (*a).b <=> a->b. Ou seja, `->` é apenas uma açúcar
+o operador ~->~ é usado no lugar de ~.~ quando o objeto é um ponteiro.
+Ou seja, na verdade, ~(*a).b~ <=> ~a->b~. Ou seja, ~->~ é apenas uma açúcar
 sintático.
 
 No StackOverflow, novamente, é possível ver uma resposta semelhante onde é
