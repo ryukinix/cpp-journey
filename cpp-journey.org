@@ -1,5 +1,5 @@
-* IN-PROGRESS HackerRank C++
-   CLOSED: [2017-07-06 qui 06:49]
+* DONE HackerRank C++
+   CLOSED: [2017-07-26 qua 14:34]
 *** DONE The Type String
     SCHEDULED: <2017-07-05 qua>
     CLOSED: [2017-07-05 qua 16:04]
@@ -498,7 +498,8 @@ aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse t
 é sobre herança, o que esse problema NP-Hard é simplemente sem relação!
 
 Mas terminado. Agora está tudo ok!
-** IN-PROGRESS STL :: C++ Standard Library
+** DONE STL :: C++ Standard Library
+   CLOSED: [2017-07-26 qua 14:34]
 *** DONE STL - Vector Sort
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
@@ -719,8 +720,31 @@ int main()
 
 Isso é o básico. Mais informações estão [[http://en.cppreference.com/w/cpp/io/manip][aqui]].
 
-*** TODO Deque-STL
-    SCHEDULED: <2017-07-25 ter>
+*** DONE Deque-STL
+    CLOSED: [2017-07-26 qua 14:27] SCHEDULED: <2017-07-25 ter>
+    CLOCK: [2017-07-25 ter 21:27]--[2017-07-26 qua 14:27] => 17:00
+
+Bem, esse problema refere-se ao uso do container Deque da STL.
+É dado um array, o seu tamanho e um índice K. O problema deseja saber
+quais são os valores máximos para cada subarray contínuo divididos em K.
+
+Exemplo: [9,2,3,5,8], k=3
+
+[9,2,3] => 9
+[2,3,5] => 5
+[3,5,8] => 8
+
+Uma aproximação ingênua nos levaria a fazer um algoritmo O(nk). Mas,
+percebendo que é somente necessário n comparações, com o auxílio de um deque
+é possível armazenar os índices úteis dos valores para cada sub-array.
+Complexidade de Espaço: O(k).
+
+A idéia principal é criar um deque ordenado de maior valor ao menor, inserindo
+os índices do array. Quando terminar o subarray, imprimir a cabeça do deque
+e remover se ele não pertencer ao próximo array. Lembre-se que para cada sub-array,
+os indices x <= (i - k) não pertencem mais ao sub-array.
+
+Uma aproximação ótima pode ser descrita nesta implementação: [[file:STL/Deque.cpp][Deque.cpp]]
 
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
