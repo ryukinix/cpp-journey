@@ -820,7 +820,7 @@ os indices x <= (i - k) não pertencem mais ao sub-array.
 Uma aproximação ótima pode ser descrita nesta implementação: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/Deque.cpp][Deque.cpp]]
 
 ** IN-PROGRESS Extra
-   DEADLINE: <2017-07-31 seg> SCHEDULED: <2017-07-29 sáb>
+   DEADLINE: <2017-07-31 seg>
 *** DONE C++ Class Templates
     CLOSED: [2017-07-27 Thu 04:58]
     CLOCK: [2017-07-27 qui 03:02]--[2017-07-27 qui 16:05] => 13:03
@@ -932,12 +932,18 @@ os pimpolhos, devo fazê-lo funcionar apenas escrevendo macros.
 Esta atividade é proposta no HackerRank e está escrita em [[file:Extra/PreprocessorSolution.cpp][PreprocessorSolution.cpp]].
 
 *** TODO Operator Overloading
+    SCHEDULED: <2017-07-28 sex>
 *** TODO Overload Operators
+    SCHEDULED: <2017-07-28 sex>
 *** TODO Attending Workshops
+    SCHEDULED: <2017-07-29 sáb>
 *** TODO C++ Class Template Specialization
+    SCHEDULED: <2017-07-29 sáb>
 *** TODO C++ Variadics
+    SCHEDULED: <2017-07-30 dom>
 *** TODO Bit Array
-***
+    SCHEDULED: <2017-07-30 dom>
+
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
   SCHEDULED: <2017-07-05 qua>
