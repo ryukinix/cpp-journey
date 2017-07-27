@@ -9,10 +9,9 @@
 #+DESCRIPTION: Uma jornada no mundo infernal de C++ através do HackerRank
 #+CATEGORIES: C++, Programming
 #+COMMENTS: true
-#+HTML_HEAD: <style>pre.src {background-color: #303030; color: #e5e5e5;}</style>
 
 
-* Tabela de Conteúdos  :TOC_3_gh:
+* Tabela de Conteúdos  :TOC_3:
 :PROPERTIES:
 :CUSTOM_ID: toc-org
 :END:
@@ -42,6 +41,15 @@
     - [[#maps][Maps]]
     - [[#print-pretty][Print Pretty]]
     - [[#deque][Deque]]
+  - [[#in-progress-extra][IN-PROGRESS Extra]]
+    - [[#c-class-templates][C++ Class Templates]]
+    - [[#preprocessor-solution][Preprocessor Solution]]
+    - [[#operator-overloading][Operator Overloading]]
+    - [[#overload-operators][Overload Operators]]
+    - [[#attending-workshops][Attending Workshops]]
+    - [[#c-class-template-specialization][C++ Class Template Specialization]]
+    - [[#c-variadics][C++ Variadics]]
+    - [[#bit-array][Bit Array]]
 - [[#c-prime-checking][C++ prime checking]]
 - [[#estudos-de-caso][Estudos de caso]]
   - [[#listas-de-inicialização-para-construtores][Listas de inicialização para construtores]]
@@ -811,6 +819,52 @@ os indices x <= (i - k) não pertencem mais ao sub-array.
 
 Uma aproximação ótima pode ser descrita nesta implementação: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/Deque.cpp][Deque.cpp]]
 
+** IN-PROGRESS Extra
+   DEADLINE: <2017-07-31 seg> SCHEDULED: <2017-07-29 sáb>
+*** DONE C++ Class Templates
+    CLOSED: [2017-07-27 Thu 04:58]
+
+/Templates/ são usados para realizar meta-programação em C++. É uma forma muito
+mais poderosa e flexível que os conhecidos, macabros e perigosos macros
+através do uso de preprocessador de C/C++ através de macros. Uma simples
+questão no HackerRank é feita para a introdução desse conceito.
+
+
+É solicitado para fazer um template ~AddElements~ que possua as seguintes características:
+
+- possa somar ~float~ e ~int~ com o método ~AddElements::add~
+- possa concatenar ~string~ com o método ~AddElements::concatenate~
+
+#+BEGIN_SRC C++
+/*Write the class AddElements here*/
+template<class T> // define uma classe parametrizada
+class AddElements {
+    T element; // elemento com tipo a ser definido
+    public:
+    AddElements(T arg): element(arg){}; // inicialização
+    T add(T &num) {
+        return element + num; // soma
+    }
+
+    T concatenate(T &s) {
+        return add(s); // concatenação
+    }
+};
+#+END_SRC
+
+
+Além da keyword ~class~ como tipo de ~T~ é possível usar ~typename~ também. As
+duas keywords possuem diferentes significados em casos seprados, como typename
+ser usado em tipos dependentes e ser recomendado usar class para classes aninhadas.
+
+*** TODO Preprocessor Solution
+*** TODO Operator Overloading
+*** TODO Overload Operators
+*** TODO Attending Workshops
+*** TODO C++ Class Template Specialization
+*** TODO C++ Variadics
+*** TODO Bit Array
+***
 * DONE C++ prime checking
   CLOSED: [2017-07-05 qua 15:08]
   SCHEDULED: <2017-07-05 qua>
