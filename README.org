@@ -43,7 +43,7 @@
     - [[#deque][Deque]]
   - [[#in-progress-extra][IN-PROGRESS Extra]]
     - [[#c-class-templates][C++ Class Templates]]
-    - [[#in-progress-preprocessor-solution][IN-PROGRESS Preprocessor Solution]]
+    - [[#preprocessor-solution][Preprocessor Solution]]
     - [[#operator-overloading][Operator Overloading]]
     - [[#overload-operators][Overload Operators]]
     - [[#attending-workshops][Attending Workshops]]
@@ -823,6 +823,7 @@ Uma aproximação ótima pode ser descrita nesta implementação: [[https://gith
    DEADLINE: <2017-07-31 seg> SCHEDULED: <2017-07-29 sáb>
 *** DONE C++ Class Templates
     CLOSED: [2017-07-27 Thu 04:58]
+    CLOCK: [2017-07-27 qui 03:02]--[2017-07-27 qui 16:05] => 13:03
 
 /Templates/ são usados para realizar meta-programação em C++. É uma forma muito
 mais poderosa e flexível que os conhecidos, macabros e perigosos macros
@@ -882,9 +883,53 @@ ser usado em tipos dependentes e ser recomendado usar ~class~ para classes aninh
 O exemplo completo, como atividade do HackerRank, pode ser encontrado aqui:
 [[file:Extra/ClassTemplates.cpp][ClassTemplates.cpp]]
 
-*** IN-PROGRESS Preprocessor Solution
+*** DONE Preprocessor Solution
+    CLOSED: [2017-07-27 qui 16:05]
+    CLOCK: [2017-07-27 qui 15:05]--[2017-07-27 qui 16:05] =>  1:00
 
+Assim como em C, C++ possui também diretrizes de processamento.
+Todas as diretrizes de preprocessamento ocorrem antes da geração de código
+objeto, compilação e /linking/. Como sempre, essas diretrizes começam
+com o símbolo /hash/ (#) prefixado.
 
+Um simples exemplo é dado a seguir:
+#+BEGIN_SRC C++
+#define INF 10000000
+if(val == INF) {
+    // Faça alguma coisa
+}
+
+// Depois do preprocessamento ter trocado as diretrizes, o código será
+if(val == 10000000) { //Aqui INF é trocado pelo valor do qual é definido.
+    //Do something
+}
+#+END_SRC
+
+Isso é chamado de ~macro~. ~#define~ define um macro.
+
+É possível também definir macros paramétricos.
+
+#+BEGIN_SRC C++
+#define add(a, b) a + b
+int x = add(a, b);
+
+// A segunda instrução após o preprocessamento ter aplicado as diretrizes será:
+int x = a + b;
+#+END_SRC
+
+Às vezes macros podem ser interessantes em lugar de funções simples pelo custo
+da chamada de função, onde é feito muitas vezes cópia dos argumentos e alocados
+na pilha. Por outro lado, macros complicados muitas vezes são desencorajados
+pela natureza difícil de fazer depuração de código.
+
+Mais informações úteis podem ser encontrados [[http://en.cppreference.com/w/cpp/preprocessor][aqui]].
+
+Em uma breve história, supostamente estou ensinando crianças a programar
+em C++ (sim, crianças... coitadas). Então no final da noite vejo um
+código promissor, mas infelizmente ele não compila. Para não desencorajar
+os pimpolhos, devo fazê-lo funcionar apenas escrevendo macros.
+
+Esta atividade é proposta no HackerRank e está escrita em [[file:Extra/PreprocessorSolution.cpp][PreprocessorSolution.cpp]].
 
 *** TODO Operator Overloading
 *** TODO Overload Operators
