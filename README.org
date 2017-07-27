@@ -43,7 +43,7 @@
     - [[#deque][Deque]]
   - [[#in-progress-extra][IN-PROGRESS Extra]]
     - [[#c-class-templates][C++ Class Templates]]
-    - [[#preprocessor-solution][Preprocessor Solution]]
+    - [[#in-progress-preprocessor-solution][IN-PROGRESS Preprocessor Solution]]
     - [[#operator-overloading][Operator Overloading]]
     - [[#overload-operators][Overload Operators]]
     - [[#attending-workshops][Attending Workshops]]
@@ -826,7 +826,7 @@ Uma aproximação ótima pode ser descrita nesta implementação: [[https://gith
 
 /Templates/ são usados para realizar meta-programação em C++. É uma forma muito
 mais poderosa e flexível que os conhecidos, macabros e perigosos macros
-através do uso de preprocessador de C/C++ através de macros. Uma simples
+através do uso de preprocessador de C/C++. Uma simples
 questão no HackerRank é feita para a introdução desse conceito.
 
 
@@ -852,12 +852,40 @@ class AddElements {
 };
 #+END_SRC
 
+Dessa maneira é possível fazer as seguintes instâncias com tipos paramétricos:
+
+#+BEGIN_SRC C++
+AddElements<string> string_adder("salada");
+AddElements<int> int_adder(10);
+AddElements<float> float_adder(0.5);
+
+cout << string_adder.concatenate(" verde") << endl;
+cout << int_adder.add(5) << endl;
+cout << float_adder.add(0.5) << endl;
+
+// OUTPUT:
+// salada verde
+// 15
+// 1.0
+#+END_SRC
+
+Geralmente containers em C++ são implementados usando Templates por conta da
+parametrização de tipos para uma mesma classe. Como um vector de ints, floats,
+set e qualquer tipo. Dessa maneira é possível criar uma classe com alta abstração
+para tratar muitos tipos diferentes. Um recurso muito poderoso de C++ se bem usado.
+
 
 Além da keyword ~class~ como tipo de ~T~ é possível usar ~typename~ também. As
-duas keywords possuem diferentes significados em casos seprados, como typename
-ser usado em tipos dependentes e ser recomendado usar class para classes aninhadas.
+duas keywords possuem diferentes significados em casos separados, como ~typename~
+ser usado em tipos dependentes e ser recomendado usar ~class~ para classes aninhadas.
 
-*** TODO Preprocessor Solution
+O exemplo completo, como atividade do HackerRank, pode ser encontrado aqui:
+[[file:Extra/ClassTemplates.cpp][ClassTemplates.cpp]]
+
+*** IN-PROGRESS Preprocessor Solution
+
+
+
 *** TODO Operator Overloading
 *** TODO Overload Operators
 *** TODO Attending Workshops
