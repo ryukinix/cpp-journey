@@ -61,8 +61,8 @@ por via das dúvidas, que todos arquivos estão no padrão ~C++14~.
     CLOCK: [2017-07-05 qua 14:31]--[2017-07-05 qua 14:47] =>  0:16
 
 Diferentemente de C, C++ implementa um tipo string não somente como uma cadeia
-de caracteres, mas como um objeto. Possui métodos associados, como length.
-É bem útil.
+de caracteres, mas como um objeto. Possui métodos associados, como `string::length`.
+É bem útil e menos difícil de tratar que /strings/ em C, que são apenas vetores de caracteres.
 
 
 #+BEGIN_SRC C++
@@ -101,30 +101,30 @@ int main() {
 #+END_SRC
 
 
-Lidando com tamanho, concatenação e substituição de characteres
-em strings.
+Lidando com tamanho, concatenação e substituição de caracteres
+em ~strings~.
 
 *** DONE Streams
     CLOSED: [2017-07-05 qua 16:20]
     SCHEDULED: <2017-07-05 qua>
     CLOCK: [2017-07-05 qua 15:01]--[2017-07-05 qua 16:09] =>  1:08
 
-Esse tópico refere-se ao gerenciamento de stream usando strings
+Esse tópico refere-se ao gerenciamento de /stream/ usando /strings/
 para C++. Muito interessante. O operador << insere informação,
 por outro lado, o operador >> extrai informação.
 
 
-O método de inicialização da stringstream cria uma stream. O cabeçalho é ~<sstream>~.
+O método de inicialização da ~stringstream~ cria uma /stream/. O cabeçalho é ~<sstream>~.
 [[https://github.com/ryukinix/cpp-journey/tree/master/Strings/strings-2.cpp][HackerRank-Problem-String]]
-O método sstream::eof verifica se a stream está no fim. EOF = End Of File.
+O método ~sstream::eof~ verifica se a /stream/ está no fim. ~EOF~ = End Of File.
 
 *** DONE Attribute Parser
     CLOSED: [2017-07-06 qui 06:49]
     SCHEDULED: <2017-07-05 qua>
     CLOCK: [2017-07-05 qua 16:09]--[2017-07-06 qui 06:32] => 14:23 (horas!)
 
-Nessa atividade, a última de strings, vou precisar fazer um parser de atributos
-em Cancer++. Um pouco da descrição do site é dada no block de código abaixo.
+Nessa atividade, a última de /strings/, vou precisar fazer um /parser/ de atributos
+em CancerPlusPlus (aka C++). Um pouco da descrição do site é dada no /block/ de código abaixo.
 
 #+BEGIN_SRC xml
 We have defined our own markup language HRML. In HRML, each element consists of
@@ -157,7 +157,7 @@ A atividade está sendo desenvolvida no arquivo:
 Já estou há várias horas resolvendo esse problema. Sinceramente é um pouco
 trabalhoso. Agora é <2017-07-06 qui 01:50>. Já se passou mais de 8 horas...
 que inferno! Mas eu dormi um pouco antes também. Cassete! terminei agora depois
-de 14 horas! Uma completa desgraça! KKK
+de 14 horas! Uma completa desgraça!
 
 QUE INFERNO!!!!!! TERMINEI!!!!
 
@@ -181,18 +181,20 @@ com muitos problemas. Na verdade C++ não é tão difícil quanto eu pensei.
 De fato, na verdade, eu nunca tinha parado pra olhar direito como era a
 linguagem e só ficava de tretinha básica.
 
-OO em C++ parece ser divertido, apesar de ainda ter uma impressão cancerígina.
-Não é pra menos... keywords, friend, public, private e protected?
+OO em C++ parece ser divertido, apesar de ainda ter uma impressão /cancerígina/.
+Não é pra menos... /keywords/, ~friend~, ~public~, ~private~ e ~protected~?
 Mas, enfim, acho que vou conseguir me acostumar. Quero terminar hoje ainda a
 introdução, estou na última parte envolvendo OO, herança e variáveis estáticas.
 
 Método virtuais em C++ são usados para fazer polimorfismo dinâmicos em heranças.
-Protected são membros acessíveis apenas pelas subclasses. Private são
-acessíveis apenas pelos métodos da classe. Public são publicos para todos.
+/Protected/ são membros acessíveis apenas pelas subclasses. /Private/ são
+acessíveis apenas pelos métodos da classe. /Public/ são publicos para todos.
 
-Por padrão, membros são privados em classes. É possível usar a keyword friend
-para acessar atributos privados de outra classe. Provavelmente eu não deveria
-estar falando desses tópicos avançados de OO na introdução (HAHAH!). Mas
+Por padrão, membros e métodos são privados em classes. Para fazer um membro ou
+método público você deve o fazer explicitamente com a keyword ~public~ e o uso
+de dois pontos ~:~. É possível usar a /keyword/ ~friend~ para acessar atributos
+privados de outra classe. Provavelmente eu não deveria
+estar falando desses tópicos avançados de OO na introdução (HAHA!). Mas
 é bom que dá o gostinho de desgraça que C++ tem tanto de especial.
 #+BEGIN_SRC C++
 const int NUMBER_OF_MARKS = 6;
@@ -294,9 +296,9 @@ criar estrutura de dados mais complexas.
    CLOCK: [2017-07-06 qui 06:58]--[2017-07-06 qui 08:00] =>  1:02
 
 Por padrão classes tem seus métodos e atributos privados, sendo reservado as
-keywords para controle de acesso: protected, private e public.
-Uma prática comum em C++ é deixar todos os atributos privados ou protecteds
-(case for uma classe base de herança), então criar getters e setters públicos.
+keywords para controle de acesso: ~protected~, ~private~ e ~public~.
+Uma prática comum em C++ é deixar todos os atributos privados ou protegidos
+(case for uma classe base de herança), então criar /getters/ e /setters/ públicos.
 
 Um exemplo de código abaixo é dado:
 
@@ -332,9 +334,10 @@ public:
 Construtores são chamados na inicialização de uma classe. Podem possuir um ou mais,
 com diferentes assinaturas.
 Os tipos de construtores são três:
-        1. Construtor padrão
-        2. Construtor parametrizado
-        3. Construtor de Cópia
+
+1. Construtor padrão
+2. Construtor parametrizado
+3. Construtor de cópia
 
 Exemplo: [[https://github.com/ryukinix/cpp-journey/tree/master/Classes/constructor.cpp][ConstructorsExample.cpp]]
 
@@ -403,7 +406,7 @@ Depois de um dia tentando ter um progresso com essa atividade, já consegui
 implementar a funcionalidade básica do ~Cache~. No entanto, os testes com maiores
 entradas estão com problemas. De acordo com a execução do HackerRank, está
 ocorrendo ~segfault~. Acredito que possa ser devido o não tratamento direto
-da desalocação dos objetos Nó durante a chamada de void pop_node(); que
+da desalocação dos objetos Nó durante a chamada de void ~pop_node();~ que
 desaloca a cauda da lista. Contínuo essa atividade mais tarde.
 
 De fato durante o ~pop_node()~; há um vazamento de memória. A referência do objeto
@@ -412,7 +415,7 @@ verificação manual na versão deste [[https://github.com/ryukinix/cpp-journey/
 A estratégia assumida é para gerenciar corretamente a memória durante as novas
 alocações.
 
-Como eu suspeitava, a função `LRUCache::pop_node()` que estava vazando memória.
+Como eu suspeitava, a função ~LRUCache::pop_node()~ que estava vazando memória.
 Após a adição das instruções pra desalocar tanto a cauda como também a entrada
 desse nó no ~HashMap mp~, os testes do HackerRank passaram. Mas demorei demais pra
 fazer tudo. Quase 30 horas! Bem que no HackerRank comentava que era uma questão
@@ -431,8 +434,8 @@ solução das questões.
 *** DONE Inheritance Introduction
      CLOSED: [2017-07-08 sáb 05:50] SCHEDULED: <2017-07-08 sáb>
 
-Nessa atividade é pedido pra construir um método de descrição de uma subclasse
-de Triangle chamada Isosceles. A construção é bem direta e não é necessário
+Nessa atividade é pedido pra construir um método de descrição de uma sub-classe
+de ~Triangle~ chamada ~Isosceles~. A construção é bem direta e não é necessário
 muita explicação. É tão estúpida que até pensei em não deixar o código fonte aqui.
 Mas vamos lá... [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/TriangleInheritance.cpp][TriangleInheritance.cpp]]
 
@@ -443,9 +446,9 @@ Mas vamos lá... [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritan
 Nesta atividade será feito um exercício para cálculo
 da área de um retângulo usando os conceitos de herança. Durante
 a construção da solução foi possível perceber que era possível
-chamar métodos da classe base com mesmo nome, no caso ambos possuiam
-o método void display, mas a instância do objeto era RectangleArea.
-Para acessar então, display de Rectangle, foi necessário a seguinte
+chamar métodos da classe base com mesmo nome, no caso ambos possuíam
+o método ~void display~, mas a instância do objeto era ~RectangleArea~.
+Para acessar então, ~display~ de ~Rectangle~, foi necessário a seguinte
 sintaxe:
 
 #+BEGIN_SRC C++
@@ -460,10 +463,10 @@ A solução completa pode ser encontrada aqui:
      CLOSED: [2017-07-08 sáb 06:43] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:35]--[2017-07-08 sáb 06:43] =>  0:08
      É possível fazer herança em mais de um nível. Um exemplo é dado
-no exercício para a construção de uma classe Equilateral, que deriva
-de Isosceles, que é derivado de Triangle. Isso demonstra a interdependência
-das propriedades que uma instância de Equilateral tem entre Isosceles
-e Triangle. O que é realmente verdade, já que um triângulo Equilátero
+no exercício para a construção de uma classe ~Equilateral~, que deriva
+de ~Isosceles~, que é derivado de ~Triangle~. Isso demonstra a interdependência
+das propriedades que uma instância de ~Equilateral~ tem entre ~Isosceles~
+e ~Triangle~. O que é realmente verdade, já que um triângulo Equilátero
 é obviamente também um Triângulo e é Isósceles.
 
 A atividade foi direta de ser completa e está descrita a seguir:
@@ -472,7 +475,7 @@ A atividade foi direta de ser completa e está descrita a seguir:
 *** DONE Accessing Inherited Functions
      CLOSED: [2017-07-08 sáb 07:21] SCHEDULED: <2017-07-08 sáb>
      CLOCK: [2017-07-08 sáb 06:48]--[2017-07-08 sáb 07:21] =>  0:33
-     Como comentada na questão Rectangle Area, é possível acessar
+     Como comentada na questão /Rectangle Area/, é possível acessar
 funções/métodos da classe base que foi herdada. Nessa atividade
 irei descrever brevemente a implementação do exercício proposto no
 HackerRank.
@@ -488,14 +491,14 @@ de base A, B e C.
 
 Lá vem questão *HARD* de novo diretamente do inferno no HackerRank. Essa questão
 envolve o uso de herança e ~dynamic_cast~, que é basicamente o que tentei fazer
-uma vez em C e só me fudi (uma variável de tipo dinâmico, acabei terminando com um ~union~ e ~enum~).
+uma vez em C e só me fudi -- implementar uma variável de tipo dinâmico, acabei terminando com um ~union~ e ~enum~.
 Parece que C++ implementa algo parecido do que eu desejei pra lidar com esse tipo de problema.
 
 Nesse caso ~dynamic_cast~ é usado para modelar uma instância compatível com outro tipo
 ou classe. Se um ~nullptr~ é retornado, significa que os tipos não são compatíveis.
 Nessa questão isso é usado para saber que tipo de que classe derivada de ~Spell~
 foi instanciada. A sintaxe é dada por ~dynamic_cast<Type*>(instance*)~. Muito
-semelhante ao cast estático de C.
+semelhante ao /cast/ estático de C, embora há também ~static_cast<Type>(instance)~.
 
 Estou tendo alguns problemas para construir um algoritmo do tipo LCS.
 Isto é: Longest Common Substring. Quando o spell é da classe Base, out seja,
@@ -503,8 +506,8 @@ um tipo de magia desconhecida, é necessário que o mago olhe no catálogo de ma
 e compare o nome da magia com o que foi recebido. Dada as duas strings, a recebida
 e a do catálogo, devo retornar o tamanho da substring maior.
 
-Ou seja, é dado o exemplo que para AquaVitae e AruTaVae a maior substring é
-AuaVae. Não tenho tanta certeza se isso está correto, mas achei um código exemplo
+Ou seja, é dado o exemplo que para ~AquaVitae~ e ~AruTaVae~ a maior substring é
+~AuaVae~. Não tenho tanta certeza se isso está correto, mas achei um código exemplo
 em C++ pra testar. Está linkado em [[https://github.com/ryukinix/cpp-journey/tree/master/Inheritance/LongestCommonSubstring.cpp][LongestCommonSubstring.cpp]]
 
 Minha desconfiança sobre isso é da natureza que esse exemplo não retorna
@@ -560,7 +563,7 @@ aí do Longest Common Subsequence é bem mais difícil. Engraçado porque esse t
    CLOSED: [2017-07-06 qui 20:44]
    CLOCK: [2017-07-06 qui 10:29]--[2017-07-06 qui 10:36] =>  0:07
 A Standard Library de C++ vem com muitos bultins. Um dos métodos
-da biblioteca é std::sort(vector::begin, vector::end).
+da biblioteca é ~std::sort(vector::begin, vector::end)~.
 
 #+CAPTION: Ordenar n números
 #+BEGIN_SRC C++
@@ -592,9 +595,9 @@ int main() {
     CLOSED: [2017-07-09 dom 06:28] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 06:25]--[2017-07-09 dom 06:28] =>  0:03
 
-A STL definida em <algorithm> e <vector> define alguns métodos
-úteis, como por exemplo o método vector::erase para remover elementos
-seja de apenas 1 localização, ou um intervalo.
+A STL definida em ~<algorithm>~ e ~<vector>~ define alguns métodos
+úteis, como por exemplo o método ~vector::erase~ para remover elementos
+seja de apenas uma localização ou um intervalo.
 
 O seguinte código foi feito para o exercício proposto do hackerrank:
 #+BEGIN_SRC C++
@@ -630,25 +633,25 @@ int main() {
 #+END_SRC
 
 Ou seja, há duas definições para vector::erase.
-- vector::erase(const iterator n);
-- vector::erase(const iterator n, const iterator m);
+- ~vector::erase(const iterator n);~
+- ~vector::erase(const iterator n, const iterator m);~
 
 O const iterator pode ser obtido a partido dos métodos:
-vector::begin e vector::end.
+~vector::begin~ e ~vector::end~.
 
 *** DONE Lower Bound
     CLOSED: [2017-07-09 dom 08:02] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 06:29]--[2017-07-09 dom 08:02] =>  1:33
 
 Em C++ a STL provém funções úteis para iterações e comparações.
-Um delas são os métodos std::lower_bound e std::upper_bound.
+Um delas são os métodos ~std::lower_bound~ e ~std::upper_bound~.
 Ambas funções recebem três parâmetros, os dois primeiros sendo
-o iterador inicial então o iterador final (vector::begin & vector::end).
+o iterador inicial então o iterador final (~vector::begin~ & ~vector::end~).
 O terceiro elemento é um objeto de comparação que implementa operator<
-para std::lower_bound e std::upper_bound.
+para ~std::lower_bound~ e ~std::upper_bound~.
 
-O método std::lower_bound retorna o número menor que a comparação que esteja
-mais próximo desse número esquerda. std::upper_bound retorna o maior número que esteja
+O método ~std::lower_bound~ retorna o número menor que a comparação que esteja
+mais próximo desse número esquerda. ~std::upper_bound~ retorna o maior número que esteja
 mais próximo desse pela direita. Isso, é claro supondo um vetor ordenado.
 
 Pode-se encontrar uma solução para este problema no arquivo:
@@ -662,13 +665,13 @@ Essa próxima atividade se refere a implementação de conjuntos na biblioteca
 padrão de C++. Definida no cabeçalho ~#include <set>~ os métodos conhecidos para
 o tipo set, são:
 
-- std::set<int> s;
-- s.length(); // tamanho do conjunto
-- s.erase(int n); // apagar um elemento
-- s.insert(int n); // inserir um elemento
-- set<int>::iterator it = s.find(int n); // procura um elemento, devolve um iterator
+- ~std::set<int> s~;
+- ~s.length()~; (tamanho do conjunto)
+- ~s.erase(int n)~; (apagar um elemento)
+- ~s.insert(int n)~; (inserir um elemento)
+- ~set<int>::iterator it = s.find(int n);~ (procura um elemento, devolve um iterator)
 
-Se o elemento não é encontrado it == s.end();
+Se o elemento não é encontrado ~it == s.end();~
 
 Um problema para explorar essas operações é proposto no HackerRank,
 onde uma solução pode ser encontrada aqui: [[https://github.com/ryukinix/cpp-journey/tree/master/STL/Set.cpp][Set.cpp]]
@@ -677,12 +680,17 @@ onde uma solução pode ser encontrada aqui: [[https://github.com/ryukinix/cpp-j
     CLOSED: [2017-07-09 dom 09:01] SCHEDULED: <2017-07-09 dom>
     CLOCK: [2017-07-09 dom 08:43]--[2017-07-09 dom 09:01] =>  0:18
 
-HashMaps são implementados em C++ pela STL, Standard Library. Também conhecidos
+HashMaps e Maps são implementados em C++ pela STL, Standard Library. Também conhecidos
 em outras linguagens como dicionários (python), HashMaps armazenam unidades de
-de pares <chave, valor> na qual a existência para uma dada chave é única.
+de pares ~<chave, valor>~ na qual a existência para uma dada chave é única.
 
-Existem alguns métodos úteis implementados para HashMaps. O tipo é definido
-em ~#include <map>~ e segue que:
+Vale ressaltar, explicitamente, que HashMaps em C++ são conhecidos como ~unordered_map~
+e Maps são implementados com ~red black trees~, árvores de busca do tipo balanceada.
+A principal diferença é que ~unordered_map~ possui acesso/inserção com complexidade
+O(1) se não houver colisão (se houver, no pior caso é O(n)). E ~map~ é *SEMPRE* O(log(n)).
+
+Existem alguns métodos úteis implementados para HashMaps e Maps. O tipo ~map~ é definido
+em ~<map>~ e segue que:
 
 #+BEGIN_SRC C++
 #include <map>
@@ -698,6 +706,8 @@ m[1]; // "banana
 
 Um problema é proposto no HackerRank para explorar essas operações.
 A implementação está feita no arquivo [[https://github.com/ryukinix/cpp-journey/tree/master/STL/HashMap.cpp][HashMap.cpp]].
+
+Edit: Pensei inicialmente que ~map~ de C++ eram HashMaps, por isso algumas trocas aqui.
 
 *** DONE Print Pretty
     CLOSED: [2017-07-25 ter 17:50] SCHEDULED: <2017-07-24 Mon>
